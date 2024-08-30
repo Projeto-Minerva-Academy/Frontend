@@ -8,25 +8,32 @@ import HeroSection from "./components/heroSection/HeroSection";
 import Button from "./components/button/Button";
 import Card from "./components/card/Card";
 import Cadastro from "./pages/cadastro/Cadastro";
+import { AuthProvider } from "./contexts/AuthContext";
+import Login from "./pages/login/Login";
+import LoginTest from "./pages/login/LoginTest";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Sobre" element={<Sobre />} />
-          <Route path="/Contato" element={<Contato />} />
-          <Route path="/Cadastro" element={<Cadastro />} />
-        </Routes>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/Sobre" element={<Sobre />} />
+            <Route path="/Contato" element={<Contato />} />
+            <Route path="/Cadastrar" element={<Cadastro />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/loginTeste" element={<LoginTest />} />
+          </Routes>
 
-        <Navbar />
-        <Button children={undefined} />
-        <Card title={""} description={""} imageSrc={""} />
-        {/* <HeroSection /> */}
-        <Footer />
-      </BrowserRouter>
+          <Navbar />
+          <Button children={undefined} />
+          <Card title={""} description={""} imageSrc={""} />
+          {/* <HeroSection /> */}
+          <Footer />
+        </BrowserRouter>
+      </AuthProvider>
     </>
   );
 }
