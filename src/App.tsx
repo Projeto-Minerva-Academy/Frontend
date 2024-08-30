@@ -4,9 +4,9 @@ import Contato from "./pages/contato/Contato";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Sobre from "./pages/sobre/Sobre";
-import HeroSection from "./components/heroSection/HeroSection";
-import Button from "./components/button/Button";
-import Card from "./components/card/Card";
+// import HeroSection from "./components/heroSection/HeroSection";
+// import Button from "./components/button/Button";
+// import Card from "./components/card/Card";
 import Cadastro from "./pages/cadastro/Cadastro";
 import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/login/Login";
@@ -28,8 +28,8 @@ function App() {
           </Routes>
 
           <Navbar />
-          <Button children={undefined} />
-          <Card title={""} description={""} imageSrc={""} />
+          {/* <Button children={undefined} /> */}
+          {/* <Card title={""} description={""} imageSrc={""} /> */}
           {/* <HeroSection /> */}
           <Footer />
         </BrowserRouter>

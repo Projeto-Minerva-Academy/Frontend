@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             <Link to="/contato" className="text-gray-800 hover:text-gray-600">Contato</Link>
           </div>
           <div className="md:flex md:items-center mt-4 md:mt-0">
-            <a href="/cadastrar" className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+            <a href="/cadastrar" className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition duration-300">
               Registrar-se
             </a>
           </div>
