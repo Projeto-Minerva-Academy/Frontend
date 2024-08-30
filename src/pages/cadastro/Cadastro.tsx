@@ -66,19 +66,25 @@ export default function Cadastro() {
   console.log(confirmaSenha);
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mt-4 mb-24">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm mt-12">
+      <div className="flex min-h-full flex-1 flex-row justify-center px-6 py-12 lg:px-8 mt-4 mb-24">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm mt-0">
           <img
             alt="Your Company"
             src="./public/logo.png"
-            className="mx-auto h-16 w-auto"
+            className="mx-auto h-2/6 w-auto"
           />
           <h2 className="mt-2 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Crie sua conta
           </h2>
+          <p className="text-center">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque,
+            suscipit adipisci. Similique natus impedit omnis, aliquam, nesciunt
+            sapiente at debitis quo commodi est quod quas necessitatibus
+            blanditiis. Architecto, at et?
+          </p>
         </div>
 
-        <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="  mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={cadastrarNovoUsuario}>
             <div>
               <label
