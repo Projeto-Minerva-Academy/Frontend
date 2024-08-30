@@ -10,7 +10,6 @@ import Sobre from "./pages/sobre/Sobre";
 import Cadastro from "./pages/cadastro/Cadastro";
 import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/login/Login";
-import LoginTest from "./pages/login/LoginTest";
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
             <Route path="/Contato" element={<Contato />} />
             <Route path="/Cadastrar" element={<Cadastro />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/loginTeste" element={<LoginTest />} />
           </Routes>
 
           <Navbar />
