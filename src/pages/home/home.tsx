@@ -1,11 +1,11 @@
 function Home() {
 
   return (
-      <div className="flex justify-center bg-gray-200 ">
+      <div className="flex justify-center bg-white ">
           <div className="container grid grid-cols text-black " >
               <div className="flex flex-col items-center justify-center gap-4 py-20 ">
-                  <h2 className="text-5xl font-bold ">
-                      Na Minerva, você dá o primeiro passo em direção a uma jornada de aprendizado transformadora!</h2>
+              <h1 className="main__title--gradient text-4xl font-bold">
+                Na Minerva, você dá o primeiro passo em direção a uma jornada de aprendizado transformadora!</h1>
                   <p className="text-xl">
                       Acreditamos que a educação é a chave para abrir portas e criar oportunidades,
                       proporcionando a cada indivíduo as ferramentas necessárias para alcançar seu potencial máximo</p>
