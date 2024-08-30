@@ -8,6 +8,6 @@ export default interface Produto {
   preco: number;
   duracao: number;
   foto: string;
-  categoria: Categoria;
-  usuario: Usuario;
+  categoria: Categoria | null;
+  usuario: Usuario | null;
 }

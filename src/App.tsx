@@ -7,31 +7,26 @@ import Sobre from "./pages/sobre/Sobre";
 import HeroSection from "./components/heroSection/HeroSection";
 import Button from "./components/button/Button";
 import Card from "./components/card/Card";
+import Cadastro from "./pages/cadastro/Cadastro";
 
 function App() {
-
   return (
-
-
     <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Sobre" element={<Sobre />} />
+          <Route path="/Contato" element={<Contato />} />
+          <Route path="/Cadastro" element={<Cadastro />} />
+        </Routes>
 
-    <BrowserRouter>
-
-    <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/Home" element={<Home />} />
-    <Route path="/Sobre" element={<Sobre />} />
-    <Route path="/Contato" element={<Contato />} />
-    
-    </Routes>
-
-    <Navbar/>
-    <Button children={undefined}/>
-    <Card title={""} description={""} imageSrc={""}/>
-    <HeroSection/>
-    <Footer/>
-
-    </BrowserRouter>
+        <Navbar />
+        <Button children={undefined} />
+        <Card title={""} description={""} imageSrc={""} />
+        {/* <HeroSection /> */}
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
