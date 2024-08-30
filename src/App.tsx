@@ -7,9 +7,9 @@ import Sobre from "./pages/sobre/Sobre";
 // import HeroSection from "./components/heroSection/HeroSection";
 // import Button from "./components/button/Button";
 // import Card from "./components/card/Card";
-import Cadastro from "./pages/cadastro/Cadastro";
 import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/login/Login";
+import Cadastro from "./pages/cadastro/Cadastro";
 
 function App() {
   return (
