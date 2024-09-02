@@ -67,16 +67,16 @@ export default function Cadastro() {
   return (
     <>
       <div className="flex min-h-full flex-1 flex-row justify-center px-6 py-12 lg:px-8 mt-4 mb-24">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm mt-0">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm my-20">
           <img
             alt="Your Company"
             src="./public/logo.png"
             className="mx-auto h-2/6 w-auto"
           />
-          <h2 className="mt-2 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="my-2 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Crie sua conta
           </h2>
-          <p className="text-center">
+          <p className="text-center tracking-tight  text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque,
             suscipit adipisci. Similique natus impedit omnis, aliquam, nesciunt
             sapiente at debitis quo commodi est quod quas necessitatibus
@@ -84,7 +84,7 @@ export default function Cadastro() {
           </p>
         </div>
 
-        <div className="  mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={cadastrarNovoUsuario}>
             <div>
               <label
@@ -100,7 +100,7 @@ export default function Cadastro() {
                   type="text"
                   required
                   autoComplete="nome"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-5 ring-1 ring-gray-950 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   value={usuario.nome}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     atualizarEstado(e)
