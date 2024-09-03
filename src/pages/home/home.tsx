@@ -1,7 +1,7 @@
 function Home() {
 
   return (
-      <div className="flex justify-center bg-white ">
+      <div className="flex justify-center bg-white mb-56">
           <div className="container grid grid-cols text-black " >
               <div className="flex flex-col items-center justify-center gap-4 py-20 ">
               <h1 className="main__title--gradient text-4xl font-bold">
