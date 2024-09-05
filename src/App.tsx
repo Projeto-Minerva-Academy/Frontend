@@ -24,7 +24,7 @@ function App() {
             <Route path="/Sobre" element={<Sobre />} />
             <Route path="/Contato" element={<Contato />} />
             <Route path="/Cadastrar" element={<Cadastro />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login />} />       
           </Routes>
 
           <Navbar />
