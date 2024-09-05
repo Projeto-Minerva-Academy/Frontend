@@ -1,8 +1,13 @@
+import HeroSection from "../../components/heroSection/HeroSection";
+
 function Home() {
 
   return (
-      <div className="flex justify-center bg-white mb-56">
-          <div className="container grid grid-cols text-black " >
+      <div className="flex justify-center bg-gradient-to-r from-slate-500 to-stone-700 mb-56">
+
+          <div className="container grid grid-cols text-white " >
+        <HeroSection></HeroSection>
+
               <div className="flex flex-col items-center justify-center gap-4 py-20 ">
               <h1 className="main__title--gradient text-4xl font-bold">
                 Na Minerva, você dá o primeiro passo em direção a uma jornada de aprendizado transformadora!</h1>
@@ -12,25 +17,25 @@ function Home() {
 
                   <div className="flex justfy-center mt-10 gap-3">
                       <div className="flex justify-around gap-4 ">
-                          <div className="px-4 py-2 border-2 border-black border-solid rounded-md ">
+                          <div className="px-4 py-2 border-2 border-white border-solid rounded-md ">
                               Programação
                           </div>
                       </div>
 
                       <div className="flex justify-around gap-4 ">
-                          <div className="px-4 py-2 border-2 border-black border-solid-md ">
+                          <div className="px-4 py-2 border-2 border-white border-solid-md ">
                               Designer
                           </div>
                       </div>
 
                       <div className="flex justify-around gap-4 ">
-                          <div className="px-4 py-2 border-2 border-black border-solid rounded-md ">
+                          <div className="px-4 py-2 border-2 border-white border-solid rounded-md ">
                               Banco de Dados
                           </div>
                       </div>
 
                       <div className="flex justify-around gap-4 ">
-                          <div className="px-4 py-2 border-2 border-black border-solid rounded-md ">
+                          <div className="px-4 py-2 border-2 border-white border-solid rounded-md ">
                               Gestão de Projetos
                           </div>
                       </div>
@@ -38,7 +43,7 @@ function Home() {
                   </div>
 
                   <div className="flex justify-around gap-4 ">
-                          <div className="px-4 py-2 border-2 border-black border-solid rounded-md ">
+                          <div className="px-4 py-2 border-2 border-white border-solid rounded-md ">
                               Conteúdos Educacionais
                           </div>
                       </div>
