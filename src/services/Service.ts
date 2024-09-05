@@ -18,7 +18,7 @@ export const login = async (url: string, dados: Object, setDados: Function) => {
   setDados(resposta.data);
 };
 
-export const buscar = async (
+export const listar = async (
   url: string,
   setDados: Function,
   header: Object
@@ -48,5 +48,6 @@ export const atualizar = async (
 };
 
 export const deletar = async (url: string, header: Object) => {
+  
   await api.delete(url, header);
 };
