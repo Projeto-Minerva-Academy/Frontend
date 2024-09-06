@@ -54,7 +54,7 @@ function ListaProdutos() {
                     wrapperClass="dna-wrapper mx-auto"
                 />
             )}
-            <div className='gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto my-4 container'
+            <div className='gap-4 grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 mx-auto my-4 container'
             >
                 {produtos.map((produto) => (
                     <CardProduto key={produto.id} produto={produto} />

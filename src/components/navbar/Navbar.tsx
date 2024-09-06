@@ -76,6 +76,11 @@ const Navbar: React.FC = () => {
                 Contato
               </Link>
             </li>
+            <li>
+              <Link to="/Produtos" className="text-gray-800 hover:text-gray-600">
+                Produtos
+              </Link>
+            </li>
             {(<li>
               <Link
                 to="/Categorias"
