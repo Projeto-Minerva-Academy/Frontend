@@ -41,6 +41,12 @@ function App() {
             <Route path="/atualizarCategoria/:id" element={<FormCategoria />} />
             <Route path="/deleteCategoria/:id" element={<DeleteCategoria />} />
 
+            <Route path="/login" element={<Login />} />   
+            <Route path="/categorias" element={<ListarCategoria />} />   
+            <Route path="/cadastrarCategoria" element={<FormCategoria />} />   
+            <Route path="/atualizarCategoria/:id" element={<FormCategoria />} />
+            <Route path="/deleteCategoria/:id" element={<DeleteCategoria />} />
+
           </Routes>
 
       <div className="App">
