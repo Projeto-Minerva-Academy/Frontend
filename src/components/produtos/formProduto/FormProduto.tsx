@@ -13,7 +13,6 @@ function FormProduto() {
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [categorias, setCategorias] = useState<Categoria[]>([])
-
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
         tipo: '',
@@ -95,17 +94,13 @@ function FormProduto() {
         });
     }
 
-    function retornar() {
-        navigate('/produtos');
-    }
-
     async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         setIsLoading(true)
 
         if (id !== undefined) {
             try {
-                await atualizar(`/produtos/atualizar`, produto, setProduto, {
+                await atualizar(`/produtos`, produto, setProduto, {
                     headers: {
                         Authorization: token,
                     },
@@ -123,7 +118,7 @@ function FormProduto() {
 
         } else {
             try {
-                await cadastrar(`/produtos/cadastrar`, produto, setProduto, {
+                await cadastrar(`/produtos`, produto, setProduto, {
                     headers: {
                         Authorization: token,
                     },
@@ -146,71 +141,108 @@ function FormProduto() {
 
     const carregandoCategoria = categoria.tipo === '';
 
+    function retornar() {
+        navigate('/produtos');
+    }
+
     return (
         <div className="container flex flex-col mx-auto items-center">
-            <h1 className="text-4xl text-center my-8">
-                {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
-            </h1>
-
-            <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoProduto}>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Nome do Produto</label>
-                    <input
-                        type="text"
-                        placeholder="Titulo"
-                        name="titulo"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={produto.nome}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Descrição do Produto</label>
-                    <input
-                        type="text"
-                        placeholder="Texto"
-                        name="texto"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={produto.descricao}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <p>Categoria do Produto</p>
-                    <select name="tema" id="tema" className='border p-2 border-slate-800 rounded'
-                        onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
-                    >
-                        <option value="" selected disabled>Selecione uma Categoria</option>
-
-                        {categorias.map((categoria) => (
-                            <>
-                                <option value={categoria.id} >{categoria.tipo}</option>
-                            </>
-                        ))}
-
-                    </select>
-                </div>
-                <button
-                    type='submit'
-                    className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
-                               text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
-                    disabled={carregandoCategoria}
+        <h1 className="text-4xl text-center my-8">
+            {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
+        </h1>
+    
+        <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoProduto}>
+            <div className="flex flex-col gap-2">
+                <label htmlFor="produto">Nome do Curso</label>
+                <input
+                    type="text"
+                    placeholder="Nome"
+                    name="nome"
+                    required
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={produto.nome}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+            </div>
+            <div className="flex flex-col gap-2">
+                <label htmlFor="produto">Descrição do Curso</label>
+                <input
+                    type="text"
+                    placeholder="Descrição"
+                    name="descricao"
+                    required
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={produto.descricao}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+            </div>
+            <div className="flex flex-col gap-2">
+                <label htmlFor="produto">Preço do Curso</label>
+                <input
+                    type="number"
+                    placeholder="Preço"
+                    name="preco"
+                    required
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={produto.preco}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+            </div>
+            <div className="flex flex-col gap-2">
+                <label htmlFor="produto">Duração do Curso</label>
+                <input
+                    type="number"
+                    placeholder="Duração"
+                    name="duracao"
+                    required
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={produto.duracao}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+            </div>
+            <div className="flex flex-col gap-2">
+                <label htmlFor="profuto">Imagem do Curso</label>
+                <input
+                    type="text"
+                    placeholder="Imagem"
+                    name="foto"
+                    required
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={produto.foto}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+            </div>
+            <div className="flex flex-col gap-2">
+                <label htmlFor="categoria">Categoria do Produto</label>
+                <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded'
+                    onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
                 >
-                    {isLoading ?
-                        <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
-                    }
-                </button>
-            </form>
-        </div>
+                    <option value="" selected disabled>Selecione uma Categoria</option>
+                    {categorias.map((categoria) => (
+                        <option key={categoria.id} value={categoria.id}>{categoria.tipo}</option>
+                    ))}
+                </select>
+            </div>
+            <button
+                type='submit'
+                className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
+                           text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
+                disabled={carregandoCategoria}
+            >
+                {isLoading ?
+                    <RotatingLines
+                        strokeColor="white"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="24"
+                        visible={true}
+                    /> :
+                    <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
+                }
+            </button>
+        </form>
+    </div>
+    
     );
 }
 

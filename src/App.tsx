@@ -15,6 +15,8 @@ import FormCategoria from "./components/categorias/formCategoria/FormCategoria";
 import DeleteCategoria from "./components/categorias/deletecategoria/DeleteCategoria";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import FormProduto from "./components/produtos/formProduto/FormProduto";
+import ListaProduto from "./components/produtos/listaProduto/ListaProduto";
 
 
 function App() {
@@ -36,7 +38,9 @@ function App() {
             <Route path="/cadastrarCategoria" element={<FormCategoria />} />   
             <Route path="/atualizarCategoria/:id" element={<FormCategoria />} />
             <Route path="/deleteCategoria/:id" element={<DeleteCategoria />} />
-
+            <Route path="/cadastrarProduto" element={<FormProduto />} />
+            <Route path="/atualizarProduto" element={<FormProduto />} />
+            <Route path="/Produtos" element={<ListaProduto />} />
           </Routes>
           </main>
 

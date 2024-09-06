@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center space-x-4 flex-grow">
           <Link to="/" className="text-2xl font-bold text-gray-800 hover:text-gray-600 flex items-center">
-            <img src="/logo.png" alt="Logo" className="h-10"/>
+            <img src="/logo.png" alt="Logo" className="h-10" />
           </Link>
           <div className="relative flex-grow max-w-xs">
             <input
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
                 width="512px"
                 height="512px"
               >
-                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
               </svg>
             </button>
           </div>
@@ -42,20 +42,20 @@ const Navbar: React.FC = () => {
         <nav
           className={`md:flex md:items-center md:space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-transparent transition-transform ${isMenuOpen ? 'transform translate-y-0' : 'transform -translate-y-full'} md:translate-y-0`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-            <li><Link to="/cursos" className="text-gray-800 hover:text-gray-600">Cursos</Link></li>
+          <ul className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+            <li><Link to="/cursos" className="text-gray-800 ml-3 hover:text-gray-600">Cursos</Link></li>
             <li><Link to="/Sobre" className="text-gray-800 hover:text-gray-600">O Projeto</Link></li>
             <li><Link to="/Contato" className="text-gray-800 hover:text-gray-600">Contato</Link></li>
             <li><Link to="/Categorias" className="text-gray-800 hover:text-gray-600">Categoria</Link></li>
-
+            <li><Link to="/Produtos" className="text-gray-800 hover:text-gray-600">Produto</Link></li>
           </ul>
           <div className="relative flex items-center -space-x-10 mt-4 md:mt-0">
-          <div className="relative z-20">
-          <Link to="/login">
-          <AuthButtonAbove />
-          </Link>
+            <div className="relative z-20">
+              <Link to="/login">
+                <AuthButtonAbove />
+              </Link>
             </div>
-            <div className="relative -ml-44 z-0">  
+            <div className="relative -ml-44 z-0">
               <Link to="/Cadastrar">
                 <AuthButtonBelow />
               </Link>
