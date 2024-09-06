@@ -75,7 +75,7 @@ export default function Login() {
                   placeholder="Usuario"
                   required
                   autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-full py-1.5 text-gray-700 shadow-sm placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-400 sm:text-sm sm:leading-6"
                   value={usuarioLogin.usuario}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     atualizarEstado(e)
@@ -109,8 +109,7 @@ export default function Login() {
                   placeholder="Senha"
                   required
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={usuarioLogin.senha}
+                  className="block w-full rounded-full py-1.5 text-gray-700 shadow-sm placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-400 sm:text-sm sm:leading-6"                  value={usuarioLogin.senha}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     atualizarEstado(e)
                   }
@@ -121,7 +120,7 @@ export default function Login() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="relative py-2 px-8 mt-4 text-white text-base nded-full overflow-hidden bg-blue-400 rounded-full hover:text-white hover:bg-blue-500"
               >
                 {isLoading ? (
                   <RotatingLines
