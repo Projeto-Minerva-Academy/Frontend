@@ -38,18 +38,23 @@ function App() {
             <Route path="/deleteCategoria/:id" element={<DeleteCategoria />} />
 
           </Routes>
+          </main>
 
+    </div>
+        
           <Navbar />
           {/* <Button children={undefined} /> */}
           {/* <Card title={""} description={""} imageSrc={""} /> */}
           {/* <HeroSection /> */}
           <Footer />
-          </main>
-          </div>
+        
         </BrowserRouter>
       </AuthProvider>
+    
+
     </>
   );
 }
+
 
 export default App;

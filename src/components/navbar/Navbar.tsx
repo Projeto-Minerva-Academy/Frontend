@@ -4,14 +4,13 @@ import { HiMenu, HiX } from 'react-icons/hi';
 import AuthButtonAbove from '../buttons/authButtons/AuthButtonAbove';
 import AuthButtonBelow from '../buttons/authButtons/AuthButtonBelow';
 
-
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+    <header className="bg-transparent shadow-none fixed w-full top-0 left-0 z-50">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center space-x-4 flex-grow">
           <Link to="/" className="text-2xl font-bold text-gray-800 hover:text-gray-600 flex items-center">
@@ -21,7 +20,7 @@ const Navbar: React.FC = () => {
             <input
               type="search"
               name="search"
-              placeholder="O que vocÃª quer aprender?"
+              placeholder="O que você quer aprender?"
               className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none w-full"
             />
             <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
@@ -41,7 +40,7 @@ const Navbar: React.FC = () => {
           {isMenuOpen ? <HiX /> : <HiMenu />}
         </button>
         <nav
-          className={`md:flex md:items-center md:space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-white md:bg-transparent transition-transform ${isMenuOpen ? 'transform translate-y-0' : 'transform -translate-y-full'} md:translate-y-0`}
+          className={`md:flex md:items-center md:space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-transparent transition-transform ${isMenuOpen ? 'transform translate-y-0' : 'transform -translate-y-full'} md:translate-y-0`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
             <li><Link to="/cursos" className="text-gray-800 hover:text-gray-600">Cursos</Link></li>
@@ -57,13 +56,12 @@ const Navbar: React.FC = () => {
           </Link>
             </div>
             <div className="relative -ml-44 z-0">  
-          <Link to="/Cadastrar">
-          <AuthButtonBelow />
-          </Link>
-          </div>
+              <Link to="/Cadastrar">
+                <AuthButtonBelow />
+              </Link>
+            </div>
           </div>
         </nav>
-
       </div>
     </header>
   );
