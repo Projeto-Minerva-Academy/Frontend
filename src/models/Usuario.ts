@@ -1,4 +1,3 @@
-import Produto from "./Produto";
 
 export default interface Usuario {
   id: number;
@@ -6,5 +5,5 @@ export default interface Usuario {
   usuario: string;
   senha: string;
   foto: string;
-  // produto: Produto | null;
+ // produto: Produto | null;
 }
