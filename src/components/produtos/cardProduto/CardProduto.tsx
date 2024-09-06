@@ -39,7 +39,7 @@ function CardProduto({ produto }: CardProdutosProps) {
                         </div>
                         <div className="bg-gray-100 border border-gray-300 p-1 rounded-lg shadow-sm flex items-center justify-between">
                             <span className="font-medium">Preço:</span>
-                            <span>R$189,90{produto.preco}</span>
+                            <span>R$189,00{produto.preco}</span>
                         </div>
                         <div className="bg-gray-100 border border-gray-300 p-1 rounded-lg shadow-sm flex items-center justify-between">
                             <span className="font-medium">Duração:</span>
