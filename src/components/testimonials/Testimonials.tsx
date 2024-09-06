@@ -1,25 +1,25 @@
-
 import React from 'react';
+
 const Testimonials: React.FC = () => {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
           Veja a avaliação de nossos alunos.
         </h2>
 
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
           {[1, 2, 3].map((_, index) => (
-            <blockquote key={index} className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <blockquote key={index} className="rounded-lg bg-gray-100 p-6 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:border-blue-400 border border-transparent">
               <div className="flex items-center gap-4">
                 <img
-                  alt=""
+                  alt="Avatar"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ7cmw0XBYuljrtHjKFZVRnSS3lJRhL7da4A&s"
-                  className="h-14 w-14 rounded-full object-cover"
+                  className="h-14 w-14 rounded-full object-cover border-2 border-blue-400"
                 />
 
                 <div>
-                  <div className="flex justify-center gap-0.5 text-green-500">
+                  <div className="flex justify-center gap-0.5 text-yellow-500">
                     {[...Array(5)].map((_, idx) => (
                       <svg
                         key={idx}
@@ -35,7 +35,7 @@ const Testimonials: React.FC = () => {
                     ))}
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">Sidney Magal</p>
+                  <p className="mt-0.5 text-lg font-medium text-gray-800">Sidney Magal</p>
                 </div>
               </div>
 
@@ -53,4 +53,3 @@ const Testimonials: React.FC = () => {
 };
 
 export default Testimonials;
-

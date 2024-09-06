@@ -6,49 +6,31 @@ import LogoSection from "../../components/logosection/LogoSection";
 
 function Home() {
   return (
-    <div className="flex justify-center mb-56">
-      <div className="container grid grid-cols text-gray-800 ">
-        <HeroSection></HeroSection>
+    <div className="flex justify-center mb-56 bg-white">
+      <div className="container grid grid-cols text-gray-800">
+        <HeroSection />
 
-        <div className="flex flex-col items-center justify-center gap-4 py-20 ">
-          <h1 className="main__title--gradient text-4xl font-bold">
+        <div className="flex flex-col items-center justify-center gap-6 py-20 text-center">
+          <h1 className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent text-4xl font-bold">
             Na Minerva, você dá o primeiro passo em direção a uma jornada de
             aprendizado transformadora!
           </h1>
-          <p className="text-xl">
+          <p className="text-xl text-gray-600">
             Acreditamos que a educação é a chave para abrir portas e criar
             oportunidades, proporcionando a cada indivíduo as ferramentas
-            necessárias para alcançar seu potencial máximo
+            necessárias para alcançar seu potencial máximo.
           </p>
 
-          <div className="flex justfy-center mt-10 gap-3">
-            <div className="flex justify-around gap-4 ">
-              <div className="px-4 py-2 border-2 border-white border-solid rounded-md ">
-                Programação
+          <div className="flex justify-center mt-10 gap-6">
+            {["Programação", "Designer", "Banco de Dados", "Gestão de Projetos"].map((item, index) => (
+              <div key={index} className="px-6 py-3 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-md transition-colors">
+                {item}
               </div>
-            </div>
-
-            <div className="flex justify-around gap-4 ">
-              <div className="px-4 py-2 border-2 border-white border-solid-md ">
-                Designer
-              </div>
-            </div>
-
-            <div className="flex justify-around gap-4 ">
-              <div className="px-4 py-2 border-2 border-white border-solid rounded-md ">
-                Banco de Dados
-              </div>
-            </div>
-
-            <div className="flex justify-around gap-4 ">
-              <div className="px-4 py-2 border-2 border-white border-solid rounded-md ">
-                Gestão de Projetos
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="flex justify-around gap-4 ">
-            <div className="px-4 py-2 border-2 border-white border-solid rounded-md ">
+          <div className="mt-6">
+            <div className="px-6 py-3 border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white rounded-md transition-colors">
               Conteúdos Educacionais
             </div>
           </div>
@@ -68,13 +50,10 @@ function Home() {
           <div className="App">
             <Testimonials />
           </div>
-
-          <div className="flex justify-center "></div>
         </div>
       </div>
     </div>
   );
-  return <div>Home</div>;
 }
 
 export default Home;
