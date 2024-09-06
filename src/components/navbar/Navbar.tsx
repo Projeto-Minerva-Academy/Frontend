@@ -46,12 +46,14 @@ const Navbar: React.FC = () => {
             <li><Link to="/cursos" className="text-gray-800 hover:text-gray-600">Cursos</Link></li>
             <li><Link to="/Sobre" className="text-gray-800 hover:text-gray-600">O Projeto</Link></li>
             <li><Link to="/Contato" className="text-gray-800 hover:text-gray-600">Contato</Link></li>
+            <li><Link to="/Categorias" className="text-gray-800 hover:text-gray-600">Categoria</Link></li>
+
           </ul>
           <div className="relative flex items-center -space-x-10 mt-4 md:mt-0">
-            <div className="relative z-20">
-              <Link to="/login">
-                <AuthButtonAbove />
-              </Link>
+          <div className="relative z-20">
+          <Link to="/login">
+          </Link>
+          <AuthButtonAbove />
             </div>
             <div className="relative -ml-44 z-0">  
               <Link to="/Cadastrar">
