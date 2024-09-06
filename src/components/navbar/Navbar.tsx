@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <header className="bg-transparent shadow-none fixed w-full top-0 left-0 z-50">
+    <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center space-x-4 flex-grow">
           <Link
