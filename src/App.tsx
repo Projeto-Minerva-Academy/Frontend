@@ -10,10 +10,6 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Navbar from "./components/navbar/Navbar";
-import MarketingSection from "./components/marketing/MarketingSection";
-import Testimonials from "./components/testimonials/Testimonials";
-import StatisticsSection from "./components/statisticssection/StatisticsSection";
-import LogoSection from "./components/logosection/LogoSection";
 import ListarCategoria from "./components/categorias/listaCategoria/ListarCategoria";
 import FormCategoria from "./components/categorias/formCategoria/FormCategoria";
 import DeleteCategoria from "./components/categorias/deletecategoria/DeleteCategoria";
@@ -41,38 +37,17 @@ function App() {
             <Route path="/atualizarCategoria/:id" element={<FormCategoria />} />
             <Route path="/deleteCategoria/:id" element={<DeleteCategoria />} />
 
-            <Route path="/login" element={<Login />} />   
-            <Route path="/categorias" element={<ListarCategoria />} />   
-            <Route path="/cadastrarCategoria" element={<FormCategoria />} />   
-            <Route path="/atualizarCategoria/:id" element={<FormCategoria />} />
-            <Route path="/deleteCategoria/:id" element={<DeleteCategoria />} />
-
           </Routes>
-
-      <div className="App">
-      <MarketingSection />
-
-      <div>
-            <LogoSection />
-        </div>
-
-      <div className="App">
-      <StatisticsSection />
-      </div>
-
-      <div className="App">
-      <Testimonials />
-      </div>
-
+          </main>
 
     </div>
+        
           <Navbar />
           {/* <Button children={undefined} /> */}
           {/* <Card title={""} description={""} imageSrc={""} /> */}
           {/* <HeroSection /> */}
           <Footer />
-          </main>
-          </div>
+        
         </BrowserRouter>
       </AuthProvider>
     
