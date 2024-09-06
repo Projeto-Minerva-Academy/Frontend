@@ -10,6 +10,10 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Navbar from "./components/navbar/Navbar";
+import MarketingSection from "./components/marketing/MarketingSection";
+import Testimonials from "./components/testimonials/Testimonials";
+import StatisticsSection from "./components/statisticssection/StatisticsSection";
+import LogoSection from "./components/logosection/LogoSection";
 
 function App() {
   return (
@@ -27,6 +31,23 @@ function App() {
             <Route path="/login" element={<Login />} />       
           </Routes>
 
+      <div className="App">
+      <MarketingSection />
+
+      <div>
+            <LogoSection />
+        </div>
+
+      <div className="App">
+      <StatisticsSection />
+      </div>
+
+      <div className="App">
+      <Testimonials />
+      </div>
+
+
+    </div>
           <Navbar />
           {/* <Button children={undefined} /> */}
           {/* <Card title={""} description={""} imageSrc={""} /> */}
@@ -36,8 +57,11 @@ function App() {
           </div>
         </BrowserRouter>
       </AuthProvider>
+    
+
     </>
   );
 }
+
 
 export default App;

@@ -3,9 +3,9 @@ import HeroSection from "../../components/heroSection/HeroSection";
 function Home() {
 
   return (
-      <div className="flex justify-center bg-gradient-to-r from-slate-500 to-stone-700 mb-56">
+      <div className="flex justify-center mb-56">
 
-          <div className="container grid grid-cols text-white " >
+          <div className="container grid grid-cols text-gray-800 " >
         <HeroSection></HeroSection>
 
               <div className="flex flex-col items-center justify-center gap-4 py-20 ">
