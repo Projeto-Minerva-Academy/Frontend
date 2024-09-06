@@ -1,5 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
-
+import { createContext, ReactNode, useState, useEffect } from "react";
 import UsuarioLogin from "../models/UsuarioLogin";
 import { login } from "../services/Service";
 
@@ -28,15 +27,26 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    // Recupera o token armazenado
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUsuario(JSON.parse(storedUser));
+    }
+  }, []);
+
   async function handleLogin(userLogin: UsuarioLogin) {
     setIsLoading(true);
     try {
-      await login(`/usuarios/logar`, userLogin, setUsuario);
-      alert("Usuário logado com sucesso");
-      setIsLoading(false);
+      await login(`/usuarios/logar`, userLogin, (usuario: UsuarioLogin) => {
+        setUsuario(usuario);
+        localStorage.setItem('user', JSON.stringify(usuario)); // Armazena o usuário no localStorage
+        alert("Usuário logado com sucesso");
+      });
     } catch (error) {
       console.log(error);
       alert("Dados do usuário inconsistentes");
+    } finally {
       setIsLoading(false);
     }
   }
@@ -50,6 +60,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       foto: "",
       token: "",
     });
+    localStorage.removeItem('user'); // Remove o usuário do localStorage
   }
 
   return (

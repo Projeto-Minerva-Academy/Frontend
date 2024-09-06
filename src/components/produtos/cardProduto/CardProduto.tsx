@@ -3,15 +3,17 @@ import Produto from '../../../models/Produto';
 
 interface CardProdutosProps {
     produto: Produto;
+    token: string;      
+    onDelete: (id: number) => void;  // Adiciona a função onDelete
 }
 
-function CardProduto({ produto }: CardProdutosProps) {
+function CardProduto({ produto, onDelete }: CardProdutosProps) {
     return (
         <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transform hover:scale-105 hover:shadow-2xl">
             
             <div className="relative w-full h-[200px]">
                 <img
-                    src={produto.usuario?.foto} // Substitua pelo URL real da imagem
+                    src={produto.usuario?.foto} 
                     alt="Imagem do Produto"
                     className="w-full h-full object-cover"
                 />
@@ -50,10 +52,11 @@ function CardProduto({ produto }: CardProdutosProps) {
                         className='flex-1 text-slate-100 bg-indigo-400 hover:bg-indigo-800 py-2 rounded-md text-center'>
                         Editar
                     </Link>
-                    <Link to={`/deletarproduto/${produto.id}`}
+                    <button
+                        onClick={() => onDelete(produto.id)}  // Chama a função onDelete
                         className='flex-1 text-white bg-red-400 hover:bg-red-700 py-2 rounded-md text-center'>
                         Deletar
-                    </Link>
+                    </button>
                 </div>
             </div>
         </div>
@@ -61,4 +64,3 @@ function CardProduto({ produto }: CardProdutosProps) {
 }
 
 export default CardProduto;
-
