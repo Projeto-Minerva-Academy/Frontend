@@ -14,7 +14,7 @@ export default function Cadastro() {
     usuario: "",
     senha: "",
     foto: "",
-    tipoUsuario: "",
+    // tipoUsuario: "",
   });
 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");

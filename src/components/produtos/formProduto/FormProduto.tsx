@@ -2,18 +2,16 @@ import { useState, useContext, useEffect, ChangeEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, cadastrar, listar } from "../../../services/Service";
-import { RotatingLines } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import Categoria from "../../../models/Categoria";
 import Produto from "../../../models/Produto";
 
-function FormPostagem() {
+function FormProduto() {
   const navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-  const [categoria, setCategoria] = useState<Categoria>({ id: 0, descricao: "", tipo: "" });
+  const [categoria, setCategoria] = useState<Categoria>({} as Categoria);
   const [produto, setProduto] = useState<Produto>({} as Produto);
 
   const { id } = useParams<{ id: string }>();
@@ -84,7 +82,6 @@ function FormPostagem() {
       ...produto,
       [e.target.name]: e.target.value,
       categoria: categoria,
-      usuario: usuario,
     });
   }
 
@@ -94,7 +91,6 @@ function FormPostagem() {
 
   async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    setIsLoading(true);
 
     if (id !== undefined) {
       try {
@@ -130,49 +126,78 @@ function FormPostagem() {
       }
     }
 
-    setIsLoading(false);
     retornar();
   }
 
-  const carregandoTema = categoria.descricao === "";
-
   return (
-    <div className="flex flex-col items-center mx-auto container">
-      <h1 className="my-8 text-4xl text-center">
-        {id !== undefined ? "Editar Produto" : "Cadastrar Produto"}
-      </h1>
-
-      <form className="flex flex-col gap-4 w-1/2" onSubmit={gerarNovoProduto}>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Nome</label>
+    <div className="flex flex-col justify-center items-center my-4">
+      <h2 className="text-2xl font-bold mb-6">
+        {id === undefined ? "Cadastrar novo produto" : "Editar produto"}
+      </h2>
+      <div className="bg-white shadow-md rounded-lg border border-gray-200 p-6 w-full max-w-md">
+        <form className="flex flex-col gap-4" onSubmit={gerarNovoProduto}>
+          <label htmlFor="nome" className="text-lg font-semibold">
+            Nome do produto
+          </label>
           <input
             type="text"
-            placeholder="Titulo"
+            placeholder="Nome"
             name="nome"
-            required
-            className="border-2 border-slate-700 p-2 rounded"
-            value={produto.nome}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            className="py-2 px-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-300 transition duration-200"
+            value={produto.nome || ""}
+            onChange={atualizarEstado}
           />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Descricao</label>
+          <label htmlFor="descricao" className="text-lg font-semibold">
+            Descrição
+          </label>
           <input
             type="text"
-            placeholder="Descricao"
+            placeholder="Descrição"
             name="descricao"
-            required
-            className="border-2 border-slate-700 p-2 rounded"
-            value={produto.descricao}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            className="py-2 px-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-300 transition duration-200"
+            value={produto.descricao || ""}
+            onChange={atualizarEstado}
           />
-        </div>
-        <div className="flex flex-col gap-2">
-          <p>Categoria da Produto</p>
+          <label htmlFor="preco" className="text-lg font-semibold">
+            Preço
+          </label>
+          <input
+            type="number"
+            placeholder="Preço"
+            name="preco"
+            className="py-2 px-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-300 transition duration-200"
+            value={produto.preco || ""}
+            onChange={atualizarEstado}
+          />
+          <label htmlFor="duracao" className="text-lg font-semibold">
+            Duração
+          </label>
+          <input
+            type="number"
+            placeholder="Duração"
+            name="duracao"
+            className="py-2 px-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-300 transition duration-200"
+            value={produto.duracao || ""}
+            onChange={atualizarEstado}
+          />
+          <label htmlFor="foto" className="text-lg font-semibold">
+            Foto
+          </label>
+          <input
+            type="text"
+            placeholder="URL da foto"
+            name="foto"
+            className="py-2 px-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-300 transition duration-200"
+            value={produto.foto || ""}
+            onChange={atualizarEstado}
+          />
+          <label htmlFor="categoria" className="text-lg font-semibold">
+            Categoria
+          </label>
           <select
             name="categoria"
             id="categoria"
-            className="border-slate-800 p-2 border rounded"
+            className="py-2 px-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-300 transition duration-200"
             onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
           >
             <option value="" selected disabled>
@@ -185,27 +210,17 @@ function FormPostagem() {
               </>
             ))}
           </select>
-        </div>
-        <button
-          type="submit"
-          className="flex justify-center bg-indigo-400 hover:bg-indigo-800 disabled:bg-slate-200 mx-auto py-2 rounded w-1/2 font-bold text-white"
-          disabled={carregandoTema}
-        >
-          {isLoading ? (
-            <RotatingLines
-              strokeColor="white"
-              strokeWidth="5"
-              animationDuration="0.75"
-              width="24"
-              visible={true}
-            />
-          ) : (
-            <span>{id !== undefined ? "Atualizar" : "Cadastrar"}</span>
-          )}
-        </button>
-      </form>
+
+          <button
+            type="submit"
+            className="bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+          >
+            {id === undefined ? "Cadastrar" : "Editar"}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
 
-export default FormPostagem;
+export default FormProduto;
