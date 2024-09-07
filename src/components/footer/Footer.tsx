@@ -16,18 +16,18 @@ const Footer = () => {
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h2 className="text-xl font-bold mb-4">Links Rápidos</h2>
             <ul>
-              <li><a href="#home" className="hover:underline">Início</a></li>
-              <li><a href="#services" className="hover:underline">Serviços</a></li>
-              <li><a href="#contact" className="hover:underline">Conheça mais</a></li>
+              <li><a href="/Home" className="hover:underline">Início</a></li>
+              <li><a href="/Projeto" className="hover:underline">Sobre o Projeto</a></li>
+              <li><a href="/Sobre" className="hover:underline">Conheça o Time</a></li>
             </ul>
           </div>
           <div className="w-full md:w-1/3">
             <h2 className="text-xl font-bold mb-4">Contato</h2>
-            <p>Email: contato@exemplo.com</p>
-            <p>Telefone: (11) 98765-4321</p>
+            <p>Email: projetominerva01@gmail.com</p>
+            <p>Telefone: (XX) XXXX-XXXX</p>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-400 pt-4">
+        <div className="mt-8 border-t border-gray-200 pt-4">
           <p className="text-center text-sm text-gray-600">&copy; 2024 Minerva Academy. Todos os direitos reservados.</p>
         </div>
       </div>

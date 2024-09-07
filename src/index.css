@@ -14,11 +14,13 @@
 
 @layer utilities {
     .main__title--gradient {
-      background: linear-gradient(90.04deg, #e76b83 .02%, #7484ed 55.64%);
+      background: linear-gradient(90.04deg, #0f81ec .02%, #0fe280 55.64%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-fill-color: transparent;
     }
   }
+
+
 
