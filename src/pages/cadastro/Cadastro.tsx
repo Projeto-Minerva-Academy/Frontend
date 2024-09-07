@@ -101,7 +101,7 @@ export default function Cadastro() {
                   type="text"
                   required
                   autoComplete="nome"
-                  className="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-5 ring-1 ring-gray-950 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-full py-1.5 text-gray-700 shadow-sm placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-400 sm:text-sm sm:leading-6"
                   value={usuario.nome}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     atualizarEstado(e)
@@ -123,7 +123,7 @@ export default function Cadastro() {
                   name="foto"
                   type="text"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-full py-1.5 text-gray-700 shadow-sm placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-400 sm:text-sm sm:leading-6"
                   value={usuario.foto}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     atualizarEstado(e)
@@ -146,7 +146,7 @@ export default function Cadastro() {
                   type="password"
                   required
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-full py-1.5 text-gray-700 shadow-sm placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-400 sm:text-sm sm:leading-6"
                   value={usuario.senha}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     atualizarEstado(e)
@@ -169,7 +169,7 @@ export default function Cadastro() {
                   type="password"
                   required
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-full py-1.5 text-gray-700 shadow-sm placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-400 sm:text-sm sm:leading-6"
                   value={confirmaSenha}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     handleConfirmarSenha(e)
@@ -192,7 +192,7 @@ export default function Cadastro() {
                   type="text"
                   required
                   autoComplete="usuario"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-full py-1.5 text-gray-700 shadow-sm placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-400 sm:text-sm sm:leading-6"
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     atualizarEstado(e)
                   }
@@ -203,7 +203,7 @@ export default function Cadastro() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="relative py-2 px-8 mt-4 text-white text-base nded-full overflow-hidden bg-blue-400 rounded-full hover:text-white hover:bg-blue-500"
               >
                 {isLoading ? (
                   <RotatingLines
@@ -221,7 +221,7 @@ export default function Cadastro() {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Seja bem-vindo{" "}
+            Seja bem-vindo!{" "}
           </p>
         </div>
       </div>
