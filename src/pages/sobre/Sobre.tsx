@@ -1,3 +1,4 @@
+import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 
 function Sobre () {
   return (
@@ -15,26 +16,44 @@ function Sobre () {
 
         <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-3 lg:max-w-screen-lg">
           <div>
-            <img 
-              className="object-cover w-24 h-24 rounded-full shadow"
-              src="https://media.licdn.com/dms/image/v2/D4D03AQHZrS9PQKKG2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723056213655?e=1730937600&v=beta&t=baqRVtWqVOWwJ3MXKeTWpEsHl0GnuU6q8n0VEbQwTuE"
-              alt="Francielli Valério"
-            />
+<div className="relative rounded-full w-40 h-40 md:h-30 sm:hover:-translate-y-1 hover:shadow-1xl"> 
+<img className="static rounded-full md:h-40" src="https://media.licdn.com/dms/image/v2/D4D03AQHZrS9PQKKG2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723056213655?e=1730937600&v=beta&t=baqRVtWqVOWwJ3MXKeTWpEsHl0GnuU6q8n0VEbQwTuE" alt="Francielli Valério"/>
+<div className="absolute inset-0 flex flex-col rounded-full w-15 justify-center px-5 py-4 text-center transition-opacity duration-300 bg-white bg-opacity-75 opacity-0 hover:opacity-100">
+              {/* ícones da redes sociais */}
+              <div className="flex items-center justify-center space-x-3">
+              <a href="https://www.linkedin.com/in/franciellivalerio/" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <LinkedinLogo size={40} color="currentColor" />
+                </a>              
+                <a href="https://github.com/franciellivalerio" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <GithubLogo size={40} color="currentColor"/>
+                </a>                
+              </div>  {/* div das logos */}
+            </div>  {/* div do efeito preto sobre a foto */}
+          </div>  {/* div da imagem */}
             <div className="flex flex-col justify-center mt-2">
               <p className="text-lg font-bold">Francielli Valério</p>
-              <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
+              <p className="mb-4 text-xs text-gray-400">Desenvolvedora Full Stack</p>
               <p className="text-sm tracking-wide text-gray-800">
               TypeScript | Nodejs | Nestjs | MySQL | React | HTML | CSS | Javascript | Bootstrap | Git e Github |
               </p>
             </div>
-          </div>
+            </div>  {/* div da divisão */}
           
           <div>
-          <img
-          className="object-cover w-24 h-24 rounded-full shadow"
-          src="https://i.postimg.cc/mD11x53Q/GLS3203.jpg"
-          alt="Gabriel Buchud"
-          />
+          <div className="relative rounded-full w-40 h-40 md:h-30 sm:hover:-translate-y-1 hover:shadow-1xl"> 
+<img className="static rounded-full md:h-40" src="https://i.postimg.cc/mD11x53Q/GLS3203.jpg" alt="Gabriel Buchud"/>
+<div className="absolute inset-0 flex flex-col rounded-full w-15 justify-center px-5 py-4 text-center transition-opacity duration-300 bg-white bg-opacity-75 opacity-0 hover:opacity-100">
+              {/* ícones da redes sociais */}
+              <div className="flex items-center justify-center space-x-3">
+              <a href="https://www.linkedin.com/in/gabriel-buchud/" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <LinkedinLogo size={40} color="currentColor" />
+                </a>              
+                <a href="https://github.com/Gabriel-Buchud" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <GithubLogo size={40} color="currentColor"/>
+                </a>                
+              </div>  {/* div das logos */}
+            </div>  {/* div do efeito preto sobre a foto */}
+          </div>  {/* div da imagem */}
               <div className="flex flex-col justify-center mt-2">
                 <p className="text-lg font-bold">Gabriel Buchud</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
@@ -47,11 +66,20 @@ function Sobre () {
             </div>
             
           <div>
-          <img
-          className="object-cover w-24 h-24 rounded-full shadow"
-          src="https://media.licdn.com/dms/image/v2/C5603AQFLrUOf_XtPoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647292944283?e=1730937600&v=beta&t=XmqKFYAK0c-ltzUyXpBG_hgrsuyF3sOArPP4I8np2ik"
-          alt="Júlia Lameiras"
-          />
+          <div className="relative rounded-full w-40 h-40 md:h-30 sm:hover:-translate-y-1 hover:shadow-1xl"> 
+<img className="static rounded-full md:h-40" src="https://media.licdn.com/dms/image/v2/C5603AQFLrUOf_XtPoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647292944283?e=1730937600&v=beta&t=XmqKFYAK0c-ltzUyXpBG_hgrsuyF3sOArPP4I8np2ik" alt="Júlia Lameiras"/>
+<div className="absolute inset-0 flex flex-col rounded-full w-15 justify-center px-5 py-4 text-center transition-opacity duration-300 bg-white bg-opacity-75 opacity-0 hover:opacity-100">
+              {/* ícones da redes sociais */}
+              <div className="flex items-center justify-center space-x-3">
+              <a href="https://www.linkedin.com/in/julialameiras/" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <LinkedinLogo size={40} color="currentColor" />
+                </a>              
+                <a href="https://github.com/julialameiras" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <GithubLogo size={40} color="currentColor"/>
+                </a>                
+              </div>  {/* div das logos */}
+            </div>  {/* div do efeito preto sobre a foto */}
+          </div>  {/* div da imagem */}
               <div className="flex flex-col justify-center mt-2">
                 <p className="text-lg font-bold">Júlia Lameiras</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
@@ -64,11 +92,20 @@ function Sobre () {
             </div>
           
           <div>
-          <img
-          className="object-cover w-24 h-24 rounded-full shadow"
-          src="https://media.licdn.com/dms/image/v2/D4E03AQGkBJ3f4yIhsg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720054797832?e=1730937600&v=beta&t=itRTo5UWYBfcOBX9c7nBleyF5EURBu3Uk0_GQh-1sko"
-          alt="Pedro Oliveira"
-          />
+          <div className="relative rounded-full w-40 h-40 md:h-30 sm:hover:-translate-y-1 hover:shadow-1xl"> 
+<img className="static rounded-full md:h-40" src="https://media.licdn.com/dms/image/v2/D4E03AQGkBJ3f4yIhsg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720054797832?e=1730937600&v=beta&t=itRTo5UWYBfcOBX9c7nBleyF5EURBu3Uk0_GQh-1sko" alt="Pedro Barboza"/>
+<div className="absolute inset-0 flex flex-col rounded-full w-15 justify-center px-5 py-4 text-center transition-opacity duration-300 bg-white bg-opacity-75 opacity-0 hover:opacity-100">
+              {/* ícones da redes sociais */}
+              <div className="flex items-center justify-center space-x-3">
+              <a href="https://www.linkedin.com/in/pedro-barboza-1958722b6/" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <LinkedinLogo size={40} color="currentColor" />
+                </a>              
+                <a href="https://github.com/PedroBarboza28" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <GithubLogo size={40} color="currentColor"/>
+                </a>                
+              </div>  {/* div das logos */}
+            </div>  {/* div do efeito preto sobre a foto */}
+          </div>  {/* div da imagem */}
               <div className="flex flex-col justify-center mt-2">
                 <p className="text-lg font-bold">Pedro Oliveira</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
@@ -81,11 +118,20 @@ function Sobre () {
             </div>
             
             <div>
-              <img
-                className="object-cover w-24 h-24 rounded-full shadow"
-                src="https://media.licdn.com/dms/image/v2/D4D03AQF79lY12JjXWQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718838789346?e=1730937600&v=beta&t=zn8AZuK35OFiePaQoD02DvmCBPqu3sAl9vRU9CE2T04"
-                alt="Roger Seixas"
-              />
+            <div className="relative rounded-full w-40 h-40 md:h-30 sm:hover:-translate-y-1 hover:shadow-1xl"> 
+<img className="static rounded-full md:h-40" src="https://media.licdn.com/dms/image/v2/D4D03AQF79lY12JjXWQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718838789346?e=1730937600&v=beta&t=zn8AZuK35OFiePaQoD02DvmCBPqu3sAl9vRU9CE2T04" alt="Roger Cruz"/>
+<div className="absolute inset-0 flex flex-col rounded-full w-15 justify-center px-5 py-4 text-center transition-opacity duration-300 bg-white bg-opacity-75 opacity-0 hover:opacity-100">
+              {/* ícones da redes sociais */}
+              <div className="flex items-center justify-center space-x-3">
+              <a href="https://www.linkedin.com/in/roger-seixas/" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <LinkedinLogo size={40} color="currentColor" />
+                </a>              
+                <a href="https://github.com/RogerVCruz" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <GithubLogo size={40} color="currentColor"/>
+                </a>                
+              </div>  {/* div das logos */}
+            </div>  {/* div do efeito preto sobre a foto */}
+          </div>  {/* div da imagem */}
               <div className="flex flex-col justify-center mt-2">
                 <p className="text-lg font-bold">Roger Seixas</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
@@ -97,11 +143,21 @@ function Sobre () {
             </div>
             
             <div>
-              <img
-                className="object-cover w-24 h-24 rounded-full shadow"
-                src="https://media.licdn.com/dms/image/v2/D4D03AQEGh6VFLPeK_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719088649276?e=1730937600&v=beta&t=yuKbj2KsZM36m_xp18KWZOBvSxNxVCq6A2GRiz2D5v8"
-                alt="Yohana Faria"
-              />
+            <div className="relative rounded-full w-40 h-40 md:h-30 sm:hover:-translate-y-1 hover:shadow-1xl"> 
+<img className="static rounded-full md:h-40" src="https://media.licdn.com/dms/image/v2/D4D03AQEGh6VFLPeK_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719088649276?e=1730937600&v=beta&t=yuKbj2KsZM36m_xp18KWZOBvSxNxVCq6A2GRiz2D5v8"
+                alt="Yohana Faria"/>
+<div className="absolute inset-0 flex flex-col rounded-full w-15 justify-center px-5 py-4 text-center transition-opacity duration-300 bg-white bg-opacity-75 opacity-0 hover:opacity-100">
+{/* ícones da redes sociais */}
+              <div className="flex items-center justify-center space-x-3">
+              <a href="https://www.linkedin.com/in/yohanafaria/" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <LinkedinLogo size={40} color="currentColor" />
+                </a>              
+                <a href="https://github.com/yohanafaria" className="hover:text-blue-700 transition-colors duration-300 cursor-pointer">
+                <GithubLogo size={40} color="currentColor"/>
+                </a>                
+              </div>  {/* div das logos */}
+            </div>  {/* div do efeito preto sobre a foto */}
+          </div>  {/* div da imagem */}
               <div className="flex flex-col justify-center mt-2">
                 <p className="text-lg font-bold">Yohana Faria</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
