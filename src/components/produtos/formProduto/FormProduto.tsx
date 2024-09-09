@@ -1,106 +1,132 @@
-import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { useState, useContext, useEffect, ChangeEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, cadastrar, listar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
-import { AuthContext } from "../../../contexts/AuthContext";
-import Produto from "../../../models/Produto";
 import Categoria from "../../../models/Categoria";
+import Produto from "../../../models/Produto";
 
 function FormProduto() {
-  const [produto, setProduto] = useState<Produto>({
-    tipo: "",
-    id: 0,
-    nome: "",
-    descricao: "",
-    preco: 0,
-    duracao: 0,
-    foto: "",
-    categoria: null,
-    usuario: null,
-  });
-  const [categorias, setCategorias] = useState<Categoria[]>([]);
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState<number | null>(null);
   const navigate = useNavigate();
+
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
+
+  const [categoria, setCategoria] = useState<Categoria>({} as Categoria);
+  const [produto, setProduto] = useState<Produto>({} as Produto);
+
   const { id } = useParams<{ id: string }>();
 
-  const { usuario } = useContext(AuthContext);
+  const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
-
-  useEffect(() => {
-    if (token === "") {
-      alert("Você precisa estar logado");
-      navigate("/login");
-    } else {
-      buscarCategorias();
-      if (id !== undefined) {
-        buscarProdutoPorId(id);
-      }
-    }
-  }, [id, token]);
-
-  useEffect(() => {
-    if (categoriaSelecionada !== null) {
-      setProduto({
-        ...produto,
-        categoria: categorias.find(c => c.id === categoriaSelecionada) || null,
-      });
-    }
-  }, [categoriaSelecionada, categorias]);
 
   async function buscarProdutoPorId(id: string) {
     try {
       await listar(`/produtos/${id}`, setProduto, {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: token },
       });
-      setCategoriaSelecionada(produto.categoria?.id || null);
-    } catch (error) {
-      console.error("Erro ao carregar produto", error);
+    } catch (error: any) {
+      if (error.toString().includes("401")) {
+        handleLogout();
+      }
+    }
+  }
+
+  async function buscarCategoriaPorId(id: string) {
+    try {
+      await listar(`/categorias/${id}`, setCategoria, {
+        headers: { Authorization: token },
+      });
+    } catch (error: any) {
+      if (error.toString().includes("401")) {
+        handleLogout();
+      }
     }
   }
 
   async function buscarCategorias() {
     try {
-      await listar('/categorias', setCategorias, {
-        headers: { Authorization: `Bearer ${token}` },
+      await listar("/categorias", setCategorias, {
+        headers: { Authorization: token },
       });
-    } catch (error) {
-      console.error("Erro ao carregar categorias", error);
+    } catch (error: any) {
+      if (error.toString().includes("401")) {
+        handleLogout();
+      }
     }
   }
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
-    const { name, value } = e.target;
-    setProduto(prevProduto => ({
-      ...prevProduto,
-      [name]: name === "preco" || name === "duracao" ? Number(value) : value,
-      categoria: name === "categoria" ? categorias.find(c => c.id === Number(value)) || null : prevProduto.categoria,
-      usuario: usuario,
-    }));
+  useEffect(() => {
+    if (token === "") {
+      ToastAlerta("Você precisa estar logado", "info");
+      navigate("/");
+    }
+  }, [token]);
+
+  useEffect(() => {
+    buscarCategorias();
+
+    if (id !== undefined) {
+      buscarProdutoPorId(id);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    setProduto({
+      ...produto,
+      categoria: categoria,
+    });
+  }, [categoria]);
+
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setProduto({
+      ...produto,
+      [e.target.name]: e.target.value,
+      categoria: categoria,
+    });
+  }
+
+  function retornar() {
+    navigate("/produtos");
   }
 
   async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    try {
-      if (id !== undefined) {
-        await atualizar(`/produtos/${id}`, produto, setProduto, {
-          headers: { Authorization: `Bearer ${token}` },
+    if (id !== undefined) {
+      try {
+        await atualizar(`/produtos`, produto, setProduto, {
+          headers: {
+            Authorization: token,
+          },
         });
-        ToastAlerta("Produto atualizado com sucesso", "sucesso");
-      } else {
-        await cadastrar(`/produtos`, produto, setProduto, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        ToastAlerta("Produto cadastrado com sucesso", "sucesso");
-      }
-      retornar();
-    } catch (error) {
-      ToastAlerta("Erro ao processar o produto", "erro");
-    }
-  }
 
-  function retornar() {
-    navigate("/produtos");
+        ToastAlerta("Produto atualizada com sucesso", "sucesso");
+      } catch (error: any) {
+        if (error.toString().includes("401")) {
+          handleLogout();
+        } else {
+          ToastAlerta("Erro ao atualizar a Produto", "erro");
+        }
+      }
+    } else {
+      try {
+        await cadastrar(`/produtos`, produto, setProduto, {
+          headers: {
+            Authorization: token,
+          },
+        });
+
+        ToastAlerta("Produto cadastrada com sucesso", "sucesso");
+      } catch (error: any) {
+        if (error.toString().includes("401")) {
+          handleLogout();
+        } else {
+          ToastAlerta("Erro ao cadastrar a Produto", "erro");
+        }
+      }
+    }
+
+    retornar();
   }
 
   return (
@@ -170,19 +196,21 @@ function FormProduto() {
           </label>
           <select
             name="categoria"
+            id="categoria"
             className="py-2 px-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-300 transition duration-200"
-            value={categoriaSelecionada || ""}
-            onChange={atualizarEstado}
+            onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
           >
-            <option value="" disabled>Selecione uma Categoria</option>
+            <option value="" selected disabled>
+              Selecione um Categoria
+            </option>
+
             {categorias.map((categoria) => (
-              <option key={categoria.id} value={categoria.id}>
-                {categoria.nome}
-              </option>
+              <>
+                <option value={categoria.id}>{categoria.descricao}</option>
+              </>
             ))}
           </select>
 
-          
           <button
             type="submit"
             className="bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"

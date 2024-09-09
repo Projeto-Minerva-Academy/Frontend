@@ -1,5 +1,6 @@
 import React from 'react';
-import { Camera, Book, Globe, User, Laptop } from "phosphor-react" // Exemplo de ícones da Phosphor Icons
+import { Globe, Database, Code, Browsers, ChartLine, User} from "phosphor-react" // Exemplo de ícones da Phosphor Icons
+
 
 type Card = {
   icon: React.ReactNode;
@@ -9,29 +10,34 @@ type Card = {
 
 const cards: Card[] = [
   {
-    icon: <Camera size={40} color="#60A5FA" />,
+    icon: <Database size={32} color="#60A5FA" />,
     title: "Banco de Dados",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    description: "Aprenda a modelar, estruturar e gerenciar bancos de dados. Entenda conceitos de SQL, NoSQL e técnicas para otimizar o desempenho e segurança das suas informações.",
   },
   {
-    icon: <Book size={40} color="#60A5FA" />,
+    icon: <Browsers size={32} color="#60A5FA" />,
     title: "Desenvolvimento Web",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    description: "Domine as tecnologias front-end e back-end. Crie sites e aplicações interativas usando HTML, CSS, JavaScript e frameworks modernos.",
   },
   {
     icon: <Globe size={40} color="#60A5FA" />,
     title: "Ciências da Computação",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    description: "Explore os fundamentos da computação. Aprenda algoritmos, estruturas de dados, programação e os princípios que movem a tecnologia moderna.",
   },
   {
-    icon: <User size={40} color="#60A5FA" />,
+    icon: <ChartLine size={32}color="#60A5FA" />,
     title: "Gestão de Projetos",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    description: "Desenvolva habilidades para planejar, executar e gerenciar projetos com eficiência. Aprenda metodologias ágeis e técnicas para liderar equipes e alcançar metas.",
   },
   {
-    icon: <Laptop size={40} color="#60A5FA" />,
+    icon: <Code size={32}  color="#60A5FA" />,
     title: "Programação Avançada",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    description: "Aprofunde seus conhecimentos em programação. Explore conceitos avançados, padrões de projeto, otimização de código e algoritmos complexos.",
+  },
+  {
+    icon: <User size={32}  color="#60A5FA" />,
+    title: "Soft Skills",
+    description: "Desenvolva competências essenciais para o mercado. Aprenda a comunicação eficaz, trabalho em equipe, resolução de conflitos e habilidades de liderança.",
   },
 ];
 
@@ -45,9 +51,11 @@ const MarketingSection: React.FC = () => {
           </h2>
 
           <p className="mt-4 text-gray-600">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur aliquam doloribus
-            nesciunt eos fugiat. Vitae aperiam fugit consequuntur saepe laborum.
+            Nosso site oferece cursos de diversas áreas da tecnologia, com certificação reconhecida ao final de cada curso.
           </p>
+          <p className="mt-4 text-gray-600">
+            Confira abaixo os principais cursos disponíveis.
+            </p>
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -55,7 +63,6 @@ const MarketingSection: React.FC = () => {
             <a
               key={index}
               className="block rounded-xl border border-gray-300 p-8 shadow-xl transition hover:border-blue-400 hover:shadow-blue-400"
-              href="#"
             >
               <div className="flex justify-center items-center">
                 {card.icon}
@@ -72,7 +79,7 @@ const MarketingSection: React.FC = () => {
 
         <div className="mt-12 text-center">
           <a
-            href="#"
+            href="/cursos"
             className="inline-block rounded-full bg-gradient-to-r from-blue-400 to-green-400 px-12 py-3 text-sm font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring focus:ring-blue-400"
           >
             Comece Agora

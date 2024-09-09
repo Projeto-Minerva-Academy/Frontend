@@ -13,6 +13,7 @@ export default function Cadastro() {
     usuario: "",
     senha: "",
     foto: "",
+    // tipoUsuario: "",
   });
 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
@@ -214,7 +215,6 @@ export default function Cadastro() {
       </div>
 
       <footer className="relative z-10 mt-19 py-4 text-center text-gray-500">
-        {/* Footer content here */}
       </footer>
     </div>
   );

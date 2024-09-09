@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
     <section className="py-28 bg-white">
       <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex px-4">
         <div className="flex-none space-y-5 sm:max-w-lg lg:max-w-xl">
-          <h1 className="text-sm text-blue-400 font-medium">
+          <h1 className="md: text-2xl text-blue-400 font-medium">
             Venha já para a Minerva!
           </h1>
           <h2 className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent md:text-5xl">
@@ -24,15 +24,10 @@ const HeroSection: React.FC = () => {
             Profissionais qualificados e certificados reconhecidos ao final de cada curso.
           </p>
           <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
+
             <a
-              href="javascript:void(0)"
-              className="block py-2 px-4 text-center text-white font-medium bg-blue-400 duration-150 hover:bg-blue-500 active:bg-blue-600 rounded-full shadow-lg hover:shadow-none"
-            >
-              Vamos começar!
-            </a>
-            <a
-              href="javascript:void(0)"
-              className="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border border-blue-400 rounded-full md:inline-flex"
+              href="/Cadastrar"
+              className="flex items-center justify-center gap-x-2 py-2 px-4 text-white bg-blue-400 hover:text-black font-medium duration-150 active:bg-gray-100 border border-blue-400 rounded-full md:inline-flex"
             >
               Garanta já o seu acesso!
               <svg
