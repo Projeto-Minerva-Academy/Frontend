@@ -1,6 +1,5 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import Usuario from "../../models/Usuario";
-import "./Cadastro.css";
 import { useNavigate } from "react-router-dom";
 import { cadastrarUsuario } from "../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
@@ -14,7 +13,6 @@ export default function Cadastro() {
     usuario: "",
     senha: "",
     foto: "",
-    tipoUsuario: "",
   });
 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
@@ -63,21 +61,29 @@ export default function Cadastro() {
     setIsLoading(false);
   }
 
-  console.log(usuario);
-  console.log(confirmaSenha);
   return (
-    <>
-      <div className="flex min-h-full flex-1 flex-row justify-center px-6 py-12 lg:px-8 mt-4 mb-24">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm my-20">
+    <div className="relative min-h-screen flex flex-col items-center justify-between overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            'url(https://images.unsplash.com/photo-1507738978512-35798112892c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', // Caminho da imagem
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mt-24">
+        {/* Seção da Logo e Texto */}
+        <div className="flex flex-col items-center md:items-start md:w-1/2 p-8">
           <img
             alt="Your Company"
             src="./public/logo.png"
-            className="mx-auto h-2/6 w-auto"
+            className="mx-auto h-24 w-auto mb-4"
           />
-          <h2 className="my-2 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="text-2xl font-bold text-black text-center md:text-left">
             Crie sua conta
           </h2>
-          <p className="text-center tracking-tight  text-xl">
+          <p className="text-center md:text-left text-xl text-black mt-4">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque,
             suscipit adipisci. Similique natus impedit omnis, aliquam, nesciunt
             sapiente at debitis quo commodi est quod quas necessitatibus
@@ -85,125 +91,106 @@ export default function Cadastro() {
           </p>
         </div>
 
-        <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
+        {/* Seção do Formulário */}
+        <div className="relative z-10 bg-white/30 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-lg w-full md:w-1/2">
           <form className="space-y-6" onSubmit={cadastrarNovoUsuario}>
             <div>
               <label
                 htmlFor="nome"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium text-gray-700"
               >
                 Nome
               </label>
-              <div className="mt-2">
-                <input
-                  id="nome"
-                  name="nome"
-                  type="text"
-                  required
-                  autoComplete="nome"
-                  className="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-5 ring-1 ring-gray-950 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={usuario.nome}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    atualizarEstado(e)
-                  }
-                />
-              </div>
+              <input
+                id="nome"
+                name="nome"
+                type="text"
+                required
+                autoComplete="nome"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                value={usuario.nome}
+                onChange={atualizarEstado}
+              />
             </div>
 
             <div>
               <label
                 htmlFor="foto"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium  text-gray-700"
               >
                 Foto
               </label>
-              <div className="mt-2">
-                <input
-                  id="foto"
-                  name="foto"
-                  type="text"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={usuario.foto}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    atualizarEstado(e)
-                  }
-                />
-              </div>
+              <input
+                id="foto"
+                name="foto"
+                type="text"
+                required
+                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                value={usuario.foto}
+                onChange={atualizarEstado}
+              />
             </div>
 
             <div>
               <label
                 htmlFor="senha"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium text-gray-700"
               >
                 Senha
               </label>
-              <div className="mt-2">
-                <input
-                  id="senha"
-                  name="senha"
-                  type="password"
-                  required
-                  autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={usuario.senha}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    atualizarEstado(e)
-                  }
-                />
-              </div>
+              <input
+                id="senha"
+                name="senha"
+                type="password"
+                required
+                autoComplete="current-password"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                value={usuario.senha}
+                onChange={atualizarEstado}
+              />
             </div>
 
             <div>
               <label
-                htmlFor="senha"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                htmlFor="confirmar-senha"
+                className="block text-sm font-medium text-gray-700"
               >
-                Confirmar senha
+                Confirmar Senha
               </label>
-              <div className="mt-2">
-                <input
-                  id="senha"
-                  name="senha"
-                  type="password"
-                  required
-                  autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={confirmaSenha}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    handleConfirmarSenha(e)
-                  }
-                />
-              </div>
+              <input
+                id="confirmar-senha"
+                name="confirmar-senha"
+                type="password"
+                required
+                autoComplete="current-password"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                value={confirmaSenha}
+                onChange={handleConfirmarSenha}
+              />
             </div>
 
             <div>
               <label
                 htmlFor="usuario"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium text-gray-700"
               >
                 Email
               </label>
-              <div className="mt-2">
-                <input
-                  id="usuario"
-                  name="usuario"
-                  type="text"
-                  required
-                  autoComplete="usuario"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    atualizarEstado(e)
-                  }
-                />
-              </div>
+              <input
+                id="usuario"
+                name="usuario"
+                type="text"
+                required
+                autoComplete="usuario"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                onChange={atualizarEstado}
+              />
             </div>
 
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="w-full bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition duration-200 flex items-center justify-center"
               >
                 {isLoading ? (
                   <RotatingLines
@@ -214,17 +201,21 @@ export default function Cadastro() {
                     visible={true}
                   />
                 ) : (
-                  <span>Cadastrar</span>
+                  "Cadastrar"
                 )}
               </button>
             </div>
           </form>
 
-          <p className="mt-10 text-center text-sm text-gray-500">
+          <p className="mt-10 text-center text-sm text-black">
             Seja bem-vindo{" "}
           </p>
         </div>
       </div>
-    </>
+
+      <footer className="relative z-10 mt-19 py-4 text-center text-gray-500">
+        {/* Footer content here */}
+      </footer>
+    </div>
   );
 }

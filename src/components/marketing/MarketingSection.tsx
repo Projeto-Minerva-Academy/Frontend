@@ -73,7 +73,7 @@ const MarketingSection: React.FC = () => {
         <div className="mt-12 text-center">
           <a
             href="#"
-            className="inline-block rounded bg-gradient-to-r from-blue-400 to-green-400 px-12 py-3 text-sm font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring focus:ring-blue-400"
+            className="inline-block rounded-full bg-gradient-to-r from-blue-400 to-green-400 px-12 py-3 text-sm font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring focus:ring-blue-400"
           >
             Comece Agora
           </a>

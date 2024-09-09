@@ -23,15 +23,15 @@ function Home() {
 
           <div className="flex justify-center mt-10 gap-6">
             {["Programação", "Designer", "Banco de Dados", "Gestão de Projetos"].map((item, index) => (
-              <div key={index} className="px-6 py-3 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-md transition-colors">
+              <div key={index} className="px-6 py-3 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full transition-colors">
                 {item}
               </div>
             ))}
           </div>
 
           <div className="mt-6">
-            <div className="px-6 py-3 border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white rounded-md transition-colors">
-              Conteúdos Educacionais
+            <div className=" px-6 py-3 border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white rounded-full transition-colors">
+              Educacionais
             </div>
           </div>
         </div>

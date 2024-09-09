@@ -12,8 +12,8 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="py-28 bg-white">
-      <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8">
-        <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
+      <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex px-4">
+        <div className="flex-none space-y-5 sm:max-w-lg lg:max-w-xl">
           <h1 className="text-sm text-blue-400 font-medium">
             Venha já para a Minerva!
           </h1>
@@ -26,13 +26,13 @@ const HeroSection: React.FC = () => {
           <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
             <a
               href="javascript:void(0)"
-              className="block py-2 px-4 text-center text-white font-medium bg-blue-400 duration-150 hover:bg-blue-500 active:bg-blue-600 rounded-lg shadow-lg hover:shadow-none"
+              className="block py-2 px-4 text-center text-white font-medium bg-blue-400 duration-150 hover:bg-blue-500 active:bg-blue-600 rounded-full shadow-lg hover:shadow-none"
             >
               Vamos começar!
             </a>
             <a
               href="javascript:void(0)"
-              className="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border border-blue-400 rounded-lg md:inline-flex"
+              className="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border border-blue-400 rounded-full md:inline-flex"
             >
               Garanta já o seu acesso!
               <svg
@@ -53,12 +53,12 @@ const HeroSection: React.FC = () => {
         <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
           <img
             src="https://wordpress-cms-ead-prod-assets.quero.space/uploads/2023/10/1.jpg"
-            className="md:rounded-tl-[108px]"
+            className="md:rounded-tl-[108px] w-full"
             alt="Startup"
           />
         </div>
       </div>
-      <div className="mt-14 px-4 md:px-8">
+      <div className="mt-14 px-4">
         <p className="text-center text-sm text-gray-700 font-semibold">
           Venha já para a melhor plataforma de ensino a distância.
         </p>

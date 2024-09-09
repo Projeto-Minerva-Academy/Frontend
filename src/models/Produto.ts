@@ -2,7 +2,6 @@ import Categoria from "./Categoria";
 import Usuario from "./Usuario";
 
 export default interface Produto {
-  tipo: string;
   id: number;
   nome: string;
   descricao: string;
