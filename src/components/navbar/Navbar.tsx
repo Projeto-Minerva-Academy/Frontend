@@ -67,6 +67,16 @@ const Navbar: React.FC = () => {
             <li><Link to="/Sobre" className="text-blue-500 hover:main__title--gradient text-1xl">Quem Faz</Link></li>
             <li><Link to="/Contato" className="text-blue-500 hover:main__title--gradient text-1xl">Contato</Link></li>
             <li><Link to="/Categorias" className="text-blue-500 hover:main__title--gradient text-1xl">Categoria</Link></li>
+            {usuario.token !== "" && (
+              <li>
+                <button
+                  onClick={logout}
+                  className="text-blue-500 hover:main__title--gradient text-1xl"
+                >
+                  Sair
+                </button>
+              </li>
+            )}
 
           </ul>
           {usuario.token === "" && (

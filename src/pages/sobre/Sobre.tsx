@@ -34,7 +34,7 @@ function Sobre () {
               <p className="text-lg font-bold">Francielli Valério</p>
               <p className="mb-4 text-xs text-gray-400">Desenvolvedora Full Stack</p>
               <p className="text-sm tracking-wide text-gray-800">
-              TypeScript | Nodejs | Nestjs | MySQL | React | HTML | CSS | Javascript | Bootstrap | Git e Github |
+              Desenvolvedora Full Stack Jr | TypeScript | Nodejs | Nestjs | MySQL | React | HTML | CSS | Javascript | Bootstrap | Git e Github |
               </p>
             </div>
             </div>  {/* div da divisão */}
@@ -58,9 +58,7 @@ function Sobre () {
                 <p className="text-lg font-bold">Gabriel Buchud</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
                 <p className="text-sm tracking-wide text-gray-800">
-                  Secondary fermentation degrees plato units of bitterness, cask
-                  conditioned ale ibu real ale pint glass craft beer. krausen goblet
-                  grainy ibu.
+                Desenvolvedor FullStack Jr | JavaScript | TypeScript | NodeJS | NestJS | SQL | REACT | Tailwind | CSS | Metodologias Ágeis
                 </p>
               </div>
             </div>
@@ -84,9 +82,7 @@ function Sobre () {
                 <p className="text-lg font-bold">Júlia Lameiras</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
                 <p className="text-sm tracking-wide text-gray-800">
-                  Secondary fermentation degrees plato units of bitterness, cask
-                  conditioned ale ibu real ale pint glass craft beer. krausen goblet
-                  grainy ibu.
+                Desenvolvedora Full-Stack Jr. | JavaScript | TypeScript | Node.js | NestJS | SQL | Git
                 </p>
               </div>
             </div>
@@ -110,9 +106,7 @@ function Sobre () {
                 <p className="text-lg font-bold">Pedro Oliveira</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
                 <p className="text-sm tracking-wide text-gray-800">
-                  Secondary fermentation degrees plato units of bitterness, cask
-                  conditioned ale ibu real ale pint glass craft beer. krausen goblet
-                  grainy ibu.
+                Desenvolvedor Full Stack Jr | Scrum | HTML | CSS | TypeScript | React.js | MySQL | GIT | GitHub | Node.js | Nest.js | HTTP.
                 </p>
               </div>
             </div>
@@ -136,8 +130,7 @@ function Sobre () {
                 <p className="text-lg font-bold">Roger Seixas</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
                 <p className="text-sm tracking-wide text-gray-800">
-                  I just closed my eyes and in a nanosecond I cured myself from this
-                  ridiculous model of disease, addiction and obsession.
+                Desenvolvedor Backend Junior | Estagiário | Programador Back-end | NodeJs | Typescript | Javascript
                 </p>
               </div>
             </div>
@@ -162,9 +155,7 @@ function Sobre () {
                 <p className="text-lg font-bold">Yohana Faria</p>
                 <p className="mb-4 text-xs text-gray-400">Desenvolvedor Full Stack</p>
                 <p className="text-sm tracking-wide text-gray-800">
-                  Est Schlitz shoreditch fashion axe. Messenger bag cupidatat
-                  Williamsburg sustainable aliqua, umami shabby chic artisan duis
-                  pickled.
+                Desenvolvedora FullStack Jr | JavaScript | TypeScript | NodeJS | NestJS | SQL | REACT | Tailwind | CSS | Metodologias Ágeis
                 </p>
               </div>
             </div>

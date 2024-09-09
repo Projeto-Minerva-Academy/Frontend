@@ -8,37 +8,41 @@ const StatisticsSection: React.FC = () => {
           Confira o que temos a oferecer!
         </h2>
 
-        <p className="mt-4 text-gray-500 sm:text-xl dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore
-          provident impedit esse recusandae facere libero harum sequi.
+        <p className="mt-4 text-gray-600 sm:text-xl dark:text-gray-600">
+        Explore nossa vasta gama de cursos projetados para atender a todas as suas necessidades 
+        de aprendizado. Desde habilidades técnicas até desenvolvimento pessoal, 
+        oferecemos conteúdos atualizados e relevantes para impulsionar sua carreira e crescimento. 
+        Confira nossos cursos e encontre o ideal para você!
         </p>
       </div>
 
       <dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center dark:border-gray-800 transition-transform transform hover:scale-105 hover:border-blue-400 hover:shadow-xl">
-          <dt className="order-last text-lg font-medium text-gray-500 dark:text-gray-400">
-            Cursos a partir:
+          
+          <dt className=" text-lg font-medium text-gray-500 dark:text-gray-400">
+            Cursos por apenas
           </dt>
-          <dd className="text-4xl font-extrabold text-blue-400 md:text-5xl">R$2.0M</dd>
+          
+          <dd className="text-4xl font-extrabold text-blue-400 md:text-5xl">R$2,00</dd>
         </div>
 
         <div className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center dark:border-gray-800 transition-transform transform hover:scale-105 hover:border-blue-400 hover:shadow-xl">
-          <dt className="order-last text-lg font-medium text-gray-500 dark:text-gray-400">
-            Plataforma ativa:
+          <dt className=" text-lg font-medium text-gray-500 dark:text-gray-400">
+            Plataforma ativa
           </dt>
-          <dd className="text-4xl font-extrabold text-blue-400 md:text-5xl">24hr</dd>
+          <dd className="text-4xl font-extrabold text-blue-400 md:text-5xl">24h</dd>
         </div>
 
         <div className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center dark:border-gray-800 transition-transform transform hover:scale-105 hover:border-blue-400 hover:shadow-xl">
-          <dt className="order-last text-lg font-medium text-gray-500 dark:text-gray-400">
-            Cursos disponíveis:
+          <dt className="text-lg font-medium text-gray-500 dark:text-gray-400">
+            Cursos disponíveis
           </dt>
-          <dd className="text-4xl font-extrabold text-blue-400 md:text-5xl">15</dd>
+          <dd className="text-4xl font-extrabold text-blue-400 md:text-5xl">+15</dd>
         </div>
 
         <div className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center dark:border-gray-800 transition-transform transform hover:scale-105 hover:border-blue-400 hover:shadow-xl">
-          <dt className="order-last text-lg font-medium text-gray-500 dark:text-gray-400">
-            Total de alunos:
+          <dt className=" text-lg font-medium text-gray-500 dark:text-gray-400">
+            Total de alunos
           </dt>
           <dd className="text-4xl font-extrabold text-blue-400 md:text-5xl">27.356</dd>
         </div>

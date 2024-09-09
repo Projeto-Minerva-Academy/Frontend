@@ -17,7 +17,8 @@ function Contato() {
           </div>
             <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl">Entre em contato!</h1>
 
-            <p className="mt-3 text-gray-500">We’d love to hear from you. Please fill out this form or shoot us an email.</p>
+            <p className="mt-3 text-gray-500">Ficou com alguma dúvida e quer saber mais do projeto? </p>
+            <p className="mt-3 text-gray-500"> Mande uma mensagem e responderemos assim que possível.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">

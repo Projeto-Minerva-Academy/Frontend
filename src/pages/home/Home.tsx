@@ -10,7 +10,7 @@ function Home() {
       <div className="container grid grid-cols text-gray-800">
         <HeroSection />
 
-        <div className="flex flex-col items-center justify-center gap-6 py-20 text-center">
+        <div className="flex flex-col items-center justify-center gap-6 py-10 mt-20 mb-40 text-center">
           <h1 className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent text-4xl font-bold">
             Na Minerva, você dá o primeiro passo em direção a uma jornada de
             aprendizado transformadora!
@@ -22,17 +22,11 @@ function Home() {
           </p>
 
           <div className="flex justify-center mt-10 gap-6">
-            {["Programação", "Designer", "Banco de Dados", "Gestão de Projetos"].map((item, index) => (
+            {["Programação Avançada", "Desenvolvimento Web", "Banco de Dados", "Gestão de Projetos", "Soft Skills"].map((item, index) => (
               <div key={index} className="px-6 py-3 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-md transition-colors">
                 {item}
               </div>
             ))}
-          </div>
-
-          <div className="mt-6">
-            <div className="px-6 py-3 border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white rounded-md transition-colors">
-              Conteúdos Educacionais
-            </div>
           </div>
         </div>
 
