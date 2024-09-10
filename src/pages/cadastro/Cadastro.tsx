@@ -81,14 +81,11 @@ export default function Cadastro() {
             src="./public/logo.png"
             className="mx-auto h-24 w-auto mb-4"
           />
-          <h2 className="text-2xl font-bold text-black text-center md:text-left">
+          <h2 className="text-2xl font-bold text-gray-800 text-center md:text-left">
             Crie sua conta
           </h2>
-          <p className="text-center md:text-left text-xl text-black mt-4">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque,
-            suscipit adipisci. Similique natus impedit omnis, aliquam, nesciunt
-            sapiente at debitis quo commodi est quod quas necessitatibus
-            blanditiis. Architecto, at et?
+          <p className="text-center md:text-left text-xl text-gray-800 mt-4">
+            O cadastro é o primeiro passo para garantir o seu futuro com a Minerva! Leva menos de 2 minutos e é grátis!
           </p>
         </div>
 
@@ -98,7 +95,7 @@ export default function Cadastro() {
             <div>
               <label
                 htmlFor="nome"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-600"
               >
                 Nome
               </label>
@@ -108,7 +105,7 @@ export default function Cadastro() {
                 type="text"
                 required
                 autoComplete="nome"
-                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
                 value={usuario.nome}
                 onChange={atualizarEstado}
               />
@@ -117,7 +114,7 @@ export default function Cadastro() {
             <div>
               <label
                 htmlFor="foto"
-                className="block text-sm font-medium  text-gray-700"
+                className="block text-sm font-medium  text-gray-600"
               >
                 Foto
               </label>
@@ -126,7 +123,7 @@ export default function Cadastro() {
                 name="foto"
                 type="text"
                 required
-                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
                 value={usuario.foto}
                 onChange={atualizarEstado}
               />
@@ -135,7 +132,7 @@ export default function Cadastro() {
             <div>
               <label
                 htmlFor="senha"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-600"
               >
                 Senha
               </label>
@@ -145,7 +142,7 @@ export default function Cadastro() {
                 type="password"
                 required
                 autoComplete="current-password"
-                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
                 value={usuario.senha}
                 onChange={atualizarEstado}
               />
@@ -154,7 +151,7 @@ export default function Cadastro() {
             <div>
               <label
                 htmlFor="confirmar-senha"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-600"
               >
                 Confirmar Senha
               </label>
@@ -164,7 +161,7 @@ export default function Cadastro() {
                 type="password"
                 required
                 autoComplete="current-password"
-                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
                 value={confirmaSenha}
                 onChange={handleConfirmarSenha}
               />
@@ -173,7 +170,7 @@ export default function Cadastro() {
             <div>
               <label
                 htmlFor="usuario"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-600"
               >
                 Email
               </label>
@@ -183,7 +180,7 @@ export default function Cadastro() {
                 type="text"
                 required
                 autoComplete="usuario"
-                className="block w-full mt-1 p-2 border rounded-full border-gray-700 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
                 onChange={atualizarEstado}
               />
             </div>
@@ -191,7 +188,7 @@ export default function Cadastro() {
             <div>
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition duration-200 flex items-center justify-center"
+                className="relative py-2 px-8 mt-4 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200 flex items-center justify-center"
               >
                 {isLoading ? (
                   <RotatingLines
@@ -208,8 +205,8 @@ export default function Cadastro() {
             </div>
           </form>
 
-          <p className="mt-10 text-center text-sm text-black">
-            Seja bem-vindo{" "}
+          <p className="mt-10 text-center text-sm text-gray-800">
+            Seja bem-vindo!{" "}
           </p>
         </div>
       </div>

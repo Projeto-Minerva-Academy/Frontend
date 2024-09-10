@@ -1,7 +1,74 @@
 import { Envelope, GithubLogo, MapPin } from "@phosphor-icons/react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { RotatingLines } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
+import { ToastAlerta } from "../../utils/ToastAlerta";
+import emailjs from "@emailjs/browser";
 
+interface Contato {
+    assunto: string;
+    nome: string;
+    sobrenome: string;
+    email: string;
+    mensagem: string;
+}
 
 function Contato() {
+
+    const navigate = useNavigate()
+
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
+    const [isSucess, setIsSucess] = useState<boolean>(false)
+
+    const [contato, setContato] = useState<Contato>({} as Contato)
+
+    function atualizarEstado(e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) {
+        setContato({
+            ...contato,
+            [e.target.name]: e.target.value
+        })
+
+    }
+
+    useEffect(() => {
+        if (isSucess) {
+            retornar()
+        }
+    }, [isSucess])
+
+    function retornar() {
+        navigate('/Cadastrar')
+    }
+
+    async function sendMail(e: FormEvent<HTMLFormElement>) {
+
+        e.preventDefault()
+        setIsLoading(true)
+
+        emailjs.init(import.meta.env.VITE_EMAIL_USER_ID);
+
+        emailjs.send(
+            import.meta.env.VITE_EMAIL_SERVICE_ID,
+            import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+            { 
+                assunto: contato.assunto,
+                nome: contato.nome,
+                sobrenome: contato.sobrenome,
+                email: contato.email,
+                mensagem: contato.mensagem,
+            }
+        )
+        .then((resposta: any) => {
+            ToastAlerta('Mensagem enviada com sucesso!', 'sucesso')
+            setIsSucess(true)
+        })
+        .catch((erro: any) => {
+            ToastAlerta('Erro ao enviar a Mensagem!', 'erro')
+        })
+        setIsLoading(false)
+
+    }
 
   return (
 <section className="bg-white">
@@ -10,8 +77,8 @@ function Contato() {
             <p className="font-medium text-white">----</p>
             <div className="sm:w-20 sm:max-w-sm">
             <img
-            alt="Your Company"
-            src="./public/logo.png"
+            alt="Projeto Minerva"
+            src="./logo.png"
             className="mx-auto h-2/6 w-auto"
           />
           </div>
@@ -23,38 +90,89 @@ function Contato() {
 
         <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
 
-        <div className="p-4 py-6 rounded-lg bg-gray-50 md:p-8">
-                <form>
+        <div>
+                <form className='p-4 py-6 rounded-lg bg-gray-50 md:p-8' onSubmit={sendMail} method='POST'>
                     <div className="-mx-2 md:items-center md:flex">
                         <div className="flex-1 px-2">
                             <label className="block mb-2 text-sm text-gray-600">Nome</label>
-                            <input type="text" placeholder="João " className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-full focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <input 
+                            id="nome" 
+                            type="text" 
+                            name="name"
+                            className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-full focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" 
+                            placeholder="João "  
+                            value={contato.nome} 
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} required
+                            />
                         </div>
 
                         <div className="flex-1 px-2 mt-4 md:mt-0">
                             <label className="block mb-2 text-sm text-gray-600">Sobrenome</label>
-                            <input type="text" placeholder="Silva" className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-full focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <input 
+                            id="sobrenome"
+                            type="text" 
+                            name="sobrenome"
+                            className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-full focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                            placeholder="Silva"
+                            value={contato.sobrenome} 
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} required 
+                            />
+                        
                         </div>
                     </div>
 
                     <div className="mt-4">
                             <label className="block mb-2 text-sm text-gray-600">Assunto</label>
-                            <input type="text" placeholder="Assunto " className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-full focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <input 
+                            id="assunto"
+                            type="text" 
+                            name="assunto"
+                            placeholder="Assunto " 
+                            className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-full focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" 
+                            value={contato.assunto}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            required/>
                     </div>
 
                     <div className="mt-4">
                         <label className="block mb-2 text-sm text-gray-600">Email address</label>
-                        <input type="email" placeholder="joaosilva@exemplo.com" className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-full focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input 
+                        id="email"
+                        type="email" 
+                        name="email"
+                        placeholder="joaosilva@exemplo.com" 
+                        className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-full focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        value={contato.email}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        required />
                     </div>
 
                     <div className="w-full mt-4">
                         <label className="block mb-2 text-sm text-gray-600">Messagem</label>
-                        <textarea className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
+                        <textarea 
+                        id="mensagem"
+                        name="mensagem"
+                        placeholder="Digite sua mensagem!"
+                        className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        rows={5}
+                        value={contato.mensagem}
+                        onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstado(e)}
+                        required></textarea>
                     </div>
 
-                    <button className="relative py-2 px-8 mt-4 text-white text-base nded-full overflow-hidden bg-blue-400 rounded-full hover:text-white hover:bg-blue-500">
-        Enviar
-      </button>
+                    <button 
+                    type='submit'
+                    className='relative py-2 px-8 mt-4 text-white text-base nded-full overflow-hidden bg-blue-400 rounded-full hover:text-white hover:bg-blue-500'>
+                    {isLoading ? <RotatingLines 
+                    strokeColor="white"
+                    strokeWidth="5"
+                    animationDuration="0.75"
+                    width="24"
+                    visible={true}
+                    />:
+                    <span> Enviar </span>
+                    }
+                    </button>
             </form>
             </div>
 

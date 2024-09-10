@@ -67,6 +67,7 @@ const Navbar: React.FC = () => {
             <li><Link to="/Sobre" className="text-blue-500 hover:main__title--gradient text-1xl">Quem Faz</Link></li>
             <li><Link to="/Contato" className="text-blue-500 hover:main__title--gradient text-1xl">Contato</Link></li>
             <li><Link to="/Categorias" className="text-blue-500 hover:main__title--gradient text-1xl">Categoria</Link></li>
+
             {usuario.token !== "" && (
               <li>
                 <button
@@ -86,6 +87,7 @@ const Navbar: React.FC = () => {
                   <AuthButtonAbove />
                 </Link>
               </div>
+
               <div className="relative -ml-44 z-0">
                 <Link to="/Cadastrar">
                   <AuthButtonBelow />
@@ -93,6 +95,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
           )}
+          
         </nav>
       </div>
     </header>

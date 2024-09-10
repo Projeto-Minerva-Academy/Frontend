@@ -42,7 +42,7 @@ function App() {
                 <Route path="/cadastrarProduto" element={<FormProduto />} />
                 <Route path="/editarProduto/:id" element={<FormProduto />} />
                 <Route path="/deleteProduto/:id" element={<DeleteProduto />} />
-
+                <Route path="/Contato" element={<Contato />} />
               </Routes>
             </main>
           </div>

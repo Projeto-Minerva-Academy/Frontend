@@ -45,11 +45,11 @@ export default function Login() {
       ></div>
 
       {/* Seção de login com efeito glass */}
-      <div className="relative z-10 bg-white/30 backdrop-blur-xl border border-gray-500 rounded-3xl p-8 shadow-lg w-full max-w-md mt-20">
+      <div className="relative z-10 bg-white/30 backdrop-blur-xl rounded-3xl p-8 shadow-lg w-full max-w-md mt-20">
         <div className="text-center">
           <img
             alt="Logo Minerva"
-            src="./public/logo.png"
+            src="./logo.png"
             className="mx-auto h-16 w-auto mb-4"
           />
           <h2 className="text-2xl font-bold text-gray-800">Login Minerva</h2>
@@ -59,14 +59,14 @@ export default function Login() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-black"
+              className="block text-sm font-medium text-gray-600"
             >
               Email
             </label>
             <input
               type="email"
               name="usuario"
-              className="w-full mt-1 p-3 border border-gray-700 bg-white/50 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 p-3 border border-gray-300 bg-white/50 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
               value={usuarioLogin.usuario}
               onChange={atualizarEstado}
               required
@@ -76,14 +76,14 @@ export default function Login() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-black"
+              className="block text-sm font-medium text-gray-600"
             >
               Senha
             </label>
             <input
               type="password"
               name="senha"
-              className="w-full mt-1 p-3 border border-gray-700 bg-white/50 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 p-3 border border-gray-300 bg-white/50 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
               value={usuarioLogin.senha}
               onChange={atualizarEstado}
               required
@@ -92,7 +92,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-black py-3 rounded-full hover:bg-blue-600 transition duration-200"
+            className="relative py-2 px-8 mt-4 bg-blue-400 text-white rounded-full hover:bg-blue-500 transition duration-200"
           >
             {isLoading ? (
               <RotatingLines
@@ -108,7 +108,7 @@ export default function Login() {
           </button>
 
           <div className="text-center">
-            <p className="text-sm text-black">
+            <p className="text-sm text-gray-800">
               Não tem conta?{" "}
               <Link to="/cadastrar" className="text-blue-700 hover:underline">
                 Cadastre-se
@@ -136,7 +136,7 @@ export default function Login() {
 
           <button
             type="button"
-            className="w-full flex items-center justify-center gap-2 rounded-full bg-white border border-gray-300 px-4 py-2 text-black hover:bg-gray-100 transition duration-200"
+            className="w-full flex items-center justify-center gap-2 rounded-full bg-white border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-200"
           >
             <img
               src="https://cdn-icons-png.flaticon.com/128/5968/5968534.png"
