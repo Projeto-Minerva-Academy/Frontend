@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="w-full md:w-1/3">
             <h2 className="text-xl font-bold mb-4">Contato</h2>
             <p>Email: projetominerva01@gmail.com</p>
-            <p>Telefone: (XX) XXXX-XXXX</p>
+            <p>Telefone: (21) 4002-8922</p>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-200 pt-4">
