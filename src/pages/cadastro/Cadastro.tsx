@@ -73,21 +73,24 @@ export default function Cadastro() {
         }}
       ></div>
 
+
+
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mt-24">
         {/* Seção da Logo e Texto */}
-        <div className="flex flex-col items-center md:items-start md:w-1/2 p-8">
-          <img
+      <div className="min-h-screen  bg-transparent flex items-center justify-center px-4">
+        <div className="max-w-lg w-full rounded-lg bg-white border-white/50 shadow-2xl p-4">
+        <img
             alt="Your Company"
-            src="./public/logo.png"
+            src="./logo.png"
             className="mx-auto h-24 w-auto mb-4"
           />
-          <h2 className="text-2xl font-bold text-gray-800 text-center md:text-left">
+          <h2 className="text-2xl text-justify font-bold text-gray-800 text-center md:text-left">
             Crie sua conta
           </h2>
-          <p className="text-center md:text-left text-xl text-gray-800 mt-4">
-            O cadastro é o primeiro passo para garantir o seu futuro com a Minerva! Leva menos de 2 minutos e é grátis!
-          </p>
+            <p className="text-gray-800 my-1">
+            O cadastro é o primeiro passo para garantir o seu futuro com a Minerva! Leva menos de 2 minutos e é grátis!</p>
         </div>
+       </div>
 
         {/* Seção do Formulário */}
         <div className="relative z-10 bg-white/30 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-lg w-full md:w-1/2">
