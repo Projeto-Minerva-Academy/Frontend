@@ -16,6 +16,7 @@ import ListaProdutos from "./components/produtos/listaProdutos/ListaProdutos";
 import FormProduto from "./components/produtos/formProduto/FormProduto";
 import DeleteProduto from "./components/produtos/deleteProduto/DeleteProduto";
 import Projeto from "./pages/projeto/Projeto";
+import Cursos from "./pages/cursos/Cursos";
 
 
 function App() {
@@ -29,8 +30,9 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Home" element={<Home />} />
-            <Route path="/Projeto" element={<Projeto />} />
+                <Route path="/Projeto" element={<Projeto />} />
                 <Route path="/Sobre" element={<Sobre />} />
+                <Route path="/cursos" element={<Cursos />} />
                 <Route path="/Contato" element={<Contato />} />
                 <Route path="/Cadastrar" element={<Cadastro />} />
                 <Route path="/login" element={<Login />} />

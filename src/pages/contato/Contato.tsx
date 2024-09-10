@@ -65,6 +65,7 @@ function Contato() {
         })
         .catch((erro: any) => {
             ToastAlerta('Erro ao enviar a Mensagem!', 'erro')
+            console.log(erro)
         })
         setIsLoading(false)
 
