@@ -46,15 +46,11 @@ const MarketingSection: React.FC = () => {
     <section className="bg-white text-gray-800">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="mx-auto max-w-lg text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold sm:text-4xl bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
             Principais cursos
           </h2>
-
           <p className="mt-4 text-gray-600">
-            Nosso site oferece cursos de diversas áreas da tecnologia, com certificação reconhecida ao final de cada curso.
-          </p>
-          <p className="mt-4 text-gray-600">
-            Confira abaixo os principais cursos disponíveis.
+            Confira abaixo os principais cursos disponíveis
             </p>
         </div>
 
@@ -80,7 +76,7 @@ const MarketingSection: React.FC = () => {
         <div className="mt-12 text-center">
           <a
             href="/cursos"
-            className="inline-block rounded-full bg-gradient-to-r from-blue-400 to-green-400 px-12 py-3 text-sm font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring focus:ring-blue-400"
+            className="inline-block rounded-full bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 px-12 py-3 text-sm font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring focus:ring-blue-400"
           >
             Comece Agora
           </a>

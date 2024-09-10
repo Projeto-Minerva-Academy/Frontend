@@ -4,14 +4,14 @@ const StatisticsSection: React.FC = () => {
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl font-bold sm:text-4xl bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold sm:text-4xl bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
           Confira o que temos a oferecer!
         </h2>
 
         <p className="mt-4 text-gray-600 sm:text-xl dark:text-gray-600">
-        Explore nossa vasta gama de cursos projetados para atender a todas as suas necessidades 
-        de aprendizado. Desde habilidades técnicas até desenvolvimento pessoal, 
-        oferecemos conteúdos atualizados e relevantes para impulsionar sua carreira e crescimento. 
+        Desde habilidades técnicas até desenvolvimento pessoal, 
+        oferecemos conteúdos atualizados e relevantes para impulsionar sua carreira e crescimento.</p>
+        <p className="mt-4 text-gray-600 sm:text-xl dark:text-gray-600"> 
         Confira nossos cursos e encontre o ideal para você!
         </p>
       </div>

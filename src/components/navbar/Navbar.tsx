@@ -43,14 +43,14 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-24 py-2 flex items-center justify-between">
-        <div className="flex items-center space-x-5 flex-grow">
+
           <Link
             to="/"
             className="text-2xl font-bold text-gray-800 hover:text-gray-600 flex items-center"
           >
             <img src="/logob.png" alt="Logo" className="h-10" />
           </Link>
-        </div>
+
         <button
           onClick={toggleMenu}
           className="md:hidden text-white text-2xl"
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
           {isMenuOpen ? <HiX /> : <HiMenu />}
         </button>
         <nav
-          className={`md:flex items-center md:space-x-6 absolute md:static top-0 left-200 w-full md:w-auto transition-transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'} md:translate-y-0`}
+          className={`md:flex items-center md:space-x-6 absolute md:static top-0 left-200 ml-52 w-full md:w-auto transition-transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'} md:translate-y-0`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 justify-center items-center">
             <li><Link to="/cursos" className="text-white hover:main__title--gradient text-1xl">Cursos</Link></li>
@@ -74,16 +74,22 @@ const Navbar: React.FC = () => {
 
             {usuario.token !== "" && (
               <li>
+                <Link to="/produtos" className="text-blue-500 hover:main__title--gradient text-1xl">Produtos</Link>
+              </li>
+            )}
+
+            {usuario.token !== "" && (
+              <li>
                 <button
                   onClick={logout}
                   className="text-blue-500 hover:main__title--gradient text-1xl"
                 >
                   Sair
                 </button>
-              </li>
+              </li> 
             )}
 
-          </ul>
+          </ul> </nav>
           {usuario.token === "" && (
             <div className="relative flex items-center -space-x-10 mt-4 md:mt-0">
               <div className="relative z-20">
@@ -100,7 +106,7 @@ const Navbar: React.FC = () => {
             </div>
           )}
           
-        </nav>
+        
       </div>
     </header>
   );

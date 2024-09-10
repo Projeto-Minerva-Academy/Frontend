@@ -4,7 +4,7 @@ const Testimonials: React.FC = () => {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
           Veja a avaliação de nossos alunos.
         </h2>
 
@@ -40,7 +40,7 @@ const Testimonials: React.FC = () => {
               </div>
 
               <p className="mt-4 text-gray-700">
-              Acabei de concluir o curso de Banco de Dados e estou extremamente satisfeita com o 
+              Acabei de concluir o curso de Banco de Dados e estou extremamente satisfeito com o 
               que aprendi. O conteúdo foi bem estruturado e abrangeu desde os conceitos básicos 
               até as técnicas avançadas de SQL e NoSQL. As aulas práticas foram fundamentais para
               consolidar meu aprendizado e a equipe de suporte foi muito atenciosa. 
