@@ -1,19 +1,34 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { HiMenu, HiX } from 'react-icons/hi';
-import AuthButtonAbove from '../buttons/authButtons/AuthButtonAbove';
-import AuthButtonBelow from '../buttons/authButtons/AuthButtonBelow';
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { HiMenu, HiX } from "react-icons/hi";
+import AuthButtonAbove from "../buttons/authButtons/AuthButtonAbove";
+import AuthButtonBelow from "../buttons/authButtons/AuthButtonBelow";
+import { ToastAlerta } from "../../utils/ToastAlerta";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const { usuario, handleLogout } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  function logout() {
+    handleLogout();
+    ToastAlerta("O usuário foi desconectado com sucesso!", "info");
+    navigate("/");
+  }
+
   return (
-    <header className="bg-transparent shadow-none fixed w-full top-0 left-0 z-50">
+    <header className="bg-white shadow-md g-4 fixed w-full top-0 left-0 z-50">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center space-x-4 flex-grow">
-          <Link to="/" className="text-2xl font-bold text-gray-800 hover:text-gray-600 flex items-center">
+          <Link
+            to="/"
+            className="text-2xl font-bold text-gray-800 hover:text-gray-600 flex items-center"
+          >
             <img src="/logo.png" alt="Logo" className="h-10" />
           </Link>
           <div className="relative flex-grow max-w-xs">
@@ -36,31 +51,70 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-        <button onClick={toggleMenu} className="md:hidden text-gray-800 text-2xl">
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-gray-800 text-2xl"
+        >
           {isMenuOpen ? <HiX /> : <HiMenu />}
         </button>
         <nav
-          className={`md:flex md:items-center md:space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-transparent transition-transform ${isMenuOpen ? 'transform translate-y-0' : 'transform -translate-y-full'} md:translate-y-0`}
+          className={`md:flex md:items-center md:space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-transparent transition-transform ${isMenuOpen ? "transform translate-y-0" : "transform -translate-y-full"} md:translate-y-0`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
-            <li><Link to="/cursos" className="text-gray-800 ml-3 hover:text-gray-600">Cursos</Link></li>
-            <li><Link to="/Sobre" className="text-gray-800 hover:text-gray-600">O Projeto</Link></li>
-            <li><Link to="/Contato" className="text-gray-800 hover:text-gray-600">Contato</Link></li>
-            <li><Link to="/Categorias" className="text-gray-800 hover:text-gray-600">Categoria</Link></li>
-            <li><Link to="/Produtos" className="text-gray-800 hover:text-gray-600">Produto</Link></li>
+          <ul className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+            <li>
+              <Link to="/cursos" className="text-gray-800 hover:text-gray-600">
+                Cursos
+              </Link>
+            </li>
+            <li>
+              <Link to="/Sobre" className="text-gray-800 hover:text-gray-600">
+                O Projeto
+              </Link>
+            </li>
+            <li>
+              <Link to="/Contato" className="text-gray-800 hover:text-gray-600">
+                Contato
+              </Link>
+            </li>
+            <li>
+              <Link to="/Produtos" className="text-gray-800 hover:text-gray-600">
+                Produtos
+              </Link>
+            </li>
+            {(<li>
+              <Link
+                to="/Categorias"
+                className="text-gray-800 hover:text-gray-600"
+              >
+                Categoria
+              </Link>
+            </li>)}
+            {usuario.token !== "" && (
+              <li>
+                <Link
+                  to=""
+                  onClick={logout}
+                  className="text-gray-800 hover:text-gray-600"
+                >
+                  Sair
+                </Link>
+              </li>
+            )}
           </ul>
-          <div className="relative flex items-center -space-x-10 mt-4 md:mt-0">
-            <div className="relative z-20">
-              <Link to="/login">
-                <AuthButtonAbove />
-              </Link>
+          {usuario.token === "" && (
+            <div className="relative flex items-center -space-x-10 mt-4 md:mt-0">
+              <div className="relative z-20">
+                <Link to="/login">
+                  <AuthButtonAbove />
+                </Link>
+              </div>
+              <div className="relative -ml-44 z-0">
+                <Link to="/Cadastrar">
+                  <AuthButtonBelow />
+                </Link>
+              </div>
             </div>
-            <div className="relative -ml-44 z-0">
-              <Link to="/Cadastrar">
-                <AuthButtonBelow />
-              </Link>
-            </div>
-          </div>
+          )}
         </nav>
       </div>
     </header>
