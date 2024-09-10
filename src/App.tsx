@@ -14,13 +14,10 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import FormProduto from "./components/produtos/formProduto/FormProduto";
 import DeleteProduto from "./components/produtos/deleteProduto/DeleteProduto";
-<<<<<<< HEAD
-import ListaProdutos from "./components/produtos/listaProduto/ListaProduto";
-=======
 import Projeto from "./pages/projeto/Projeto";
 import Cursos from "./pages/cursos/Cursos";
+import ListaProdutos from "./components/produtos/listaProduto/ListaProduto";
 
->>>>>>> 6d16251e359d93e8ddbebdf728966d0ade656a95
 
 function App() {
   return (

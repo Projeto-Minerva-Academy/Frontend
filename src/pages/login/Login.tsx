@@ -52,7 +52,7 @@ export default function Login() {
             src="./logo.png"
             className="mx-auto h-16 w-auto mb-4"
           />
-          <h2 className="text-2xl font-bold text-gray-800">Login Minerva</h2>
+          <h2 className="text-2xl font-bold mb-2 text-gray-800">Login Minerva</h2>
         </div>
 
         <form className="space-y-6" onSubmit={login}>

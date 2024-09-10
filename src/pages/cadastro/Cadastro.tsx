@@ -75,26 +75,22 @@ export default function Cadastro() {
 
 
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mt-24">
-        {/* Seção da Logo e Texto */}
-      <div className="min-h-screen  bg-transparent flex items-center justify-center px-4">
-        <div className="max-w-lg w-full rounded-lg bg-white border-white/50 shadow-2xl p-4">
-        <img
-            alt="Your Company"
-            src="./logo.png"
-            className="mx-auto h-24 w-auto mb-4"
-          />
-          <h2 className="text-2xl text-justify font-bold text-gray-800 text-center md:text-left">
-            Crie sua conta
-          </h2>
-            <p className="text-gray-800 my-1">
-            O cadastro é o primeiro passo para garantir o seu futuro com a Minerva! Leva menos de 2 minutos e é grátis!</p>
-        </div>
-       </div>
+      <div className="relative z-10 max-x-md flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mt-24">
 
         {/* Seção do Formulário */}
-        <div className="relative z-10 bg-white/30 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-lg w-full md:w-1/2">
+        <div className="relative z-10 bg-white/30 backdrop-blur-xl mt-2 rounded-3xl p-8 shadow-lg w-full max-w-md">
+
+        <div className="text-center">
+          <img
+            alt="Logo Minerva"
+            src="./logo.png"
+            className="mx-auto h-16 w-auto mb-4"
+          />
+          <h2 className="text-2xl font-bold mb-2 text-gray-800">Crie sua conta</h2>
+        </div>
+
           <form className="space-y-6" onSubmit={cadastrarNovoUsuario}>
+
             <div>
               <label
                 htmlFor="nome"
@@ -110,24 +106,6 @@ export default function Cadastro() {
                 autoComplete="nome"
                 className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
                 value={usuario.nome}
-                onChange={atualizarEstado}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="foto"
-                className="block text-sm font-medium  text-gray-600"
-              >
-                Foto
-              </label>
-              <input
-                id="foto"
-                name="foto"
-                type="text"
-                required
-                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
-                value={usuario.foto}
                 onChange={atualizarEstado}
               />
             </div>
@@ -189,9 +167,27 @@ export default function Cadastro() {
             </div>
 
             <div>
+              <label
+                htmlFor="foto"
+                className="block text-sm font-medium  text-gray-600"
+              >
+                Foto
+              </label>
+              <input
+                id="foto"
+                name="foto"
+                type="text"
+                required
+                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
+                value={usuario.foto}
+                onChange={atualizarEstado}
+              />
+            </div>
+
+            <div>
               <button
                 type="submit"
-                className="relative py-2 px-8 mt-4 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200"
+                className="relative py-2 px-8 mt-2 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200"
               >
                 {isLoading ? (
                   <RotatingLines
@@ -208,7 +204,7 @@ export default function Cadastro() {
             </div>
           </form>
 
-          <p className="mt-10 text-center text-sm text-gray-800">
+          <p className="mt-8 text-center text-sm text-gray-800">
             Seja bem-vindo!{" "}
           </p>
         </div>
