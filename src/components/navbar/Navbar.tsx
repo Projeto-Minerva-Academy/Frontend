@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 
   function logout() {
     handleLogout();
-    ToastAlerta("O usuário foi desconectado com sucesso!", "info");
+    ToastAlerta("O usuário foi desconectado com sucesso!", "sucesso");
     navigate("/");
   }
 
@@ -66,7 +66,12 @@ const Navbar: React.FC = () => {
             <li><Link to="/Projeto" className="text-blue-500 hover:main__title--gradient text-1xl">O Projeto</Link></li>
             <li><Link to="/Sobre" className="text-blue-500 hover:main__title--gradient text-1xl">Quem Faz</Link></li>
             <li><Link to="/Contato" className="text-blue-500 hover:main__title--gradient text-1xl">Contato</Link></li>
-            <li><Link to="/Categorias" className="text-blue-500 hover:main__title--gradient text-1xl">Categoria</Link></li>
+            
+            {usuario.token !== "" && (
+              <li> 
+                <Link to="/Categorias" className="text-blue-500 hover:main__title--gradient text-1xl">Categorias</Link>
+              </li>
+              )}
 
             {usuario.token !== "" && (
               <li>

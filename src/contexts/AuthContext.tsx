@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useState, useEffect } from "react";
 import UsuarioLogin from "../models/UsuarioLogin";
 import { login } from "../services/Service";
+import { ToastAlerta } from "../utils/ToastAlerta";
 
 interface AuthContextProps {
   usuario: UsuarioLogin;
@@ -41,11 +42,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
       await login(`/usuarios/logar`, userLogin, (usuario: UsuarioLogin) => {
         setUsuario(usuario);
         localStorage.setItem('user', JSON.stringify(usuario)); // Armazena o usuário no localStorage
-        alert("Usuário logado com sucesso");
+        ToastAlerta("Usuário logado com sucesso", "sucesso");
       });
     } catch (error) {
       console.log(error);
-      alert("Dados do usuário inconsistentes");
+      ToastAlerta("Dados do usuário inconsistentes", "erro");
     } finally {
       setIsLoading(false);
     }

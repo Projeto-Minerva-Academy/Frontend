@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { Grid } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListarCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -33,7 +34,7 @@ function ListarCategoria() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      ToastAlerta("Você precisa estar logado", "error");
       navigate("/");
     }
   }, [token]);
@@ -62,7 +63,7 @@ function ListarCategoria() {
         <div className="flex justify-end mb-6">
           <Link to="/cadastrarCategoria">
             
-              <button className="py-2 px-6 bg-blue-400 text-white rounded-lg border border-blue-500 hover:bg-blue-500 transition duration-300">
+              <button className="py-2 px-6 bg-sky-500 text-white rounded-lg border border-blue-500 hover:bg-blue-500 transition duration-300">
                 Nova Categoria
               </button>
             

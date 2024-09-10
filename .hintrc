@@ -13,8 +13,10 @@
     "axe/forms": [
       "default",
       {
-        "autocomplete-valid": "off"
+        "autocomplete-valid": "off",
+        "label": "off"
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }

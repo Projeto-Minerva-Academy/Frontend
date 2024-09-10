@@ -7,12 +7,12 @@ interface CardCategoriaProps {
 
 function CardCategoria({ categoria }: CardCategoriaProps) {
   return (
-    <div className="bg-white shadow-md rounded-lg border border-gray-800 overflow-hidden">
-      <div className="bg-blue-300 text-white p-4">
-        <h3 className="text-xl font-bold">{categoria.tipo}</h3>
-        <h4 className="text-xs font-medium">{categoria.descricao}</h4>
+    <div className="p-0 inline-block bg-white shadow-lg rounded-lg overflow-hidden flex flex-col h-auto">
+      <div className="bg-sky-700 text-white p-4">
+        <h3 className="bg-sky-500 text-xl font-bold p-4 rounded-lg text-center">{categoria.tipo}</h3>
+        <h4 className="px-2 py-4 text-md font-medium">{categoria.descricao}</h4>
       </div>
-      <div className="flex justify-around p-2 bg-gray-100 gap-2">
+      <div className="flex justify-around p-4 bg-white gap-2">
         <Link to={`/atualizarCategoria/${categoria.id}`} className="w-full">
           <button className="w-full py-2 px-4 text-blue-400 border border-blue-500 rounded-lg hover:bg-blue-300 hover:text-white transition duration-300">
             Editar

@@ -28,12 +28,6 @@ function Home() {
               </div>
             ))}
           </div>
-
-          <div className="mt-6">
-            <div className=" px-6 py-3 border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white rounded-full transition-colors">
-              Educacionais
-            </div>
-          </div>
         </div>
 
         <div className="App">

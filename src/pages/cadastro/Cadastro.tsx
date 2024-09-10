@@ -188,7 +188,7 @@ export default function Cadastro() {
             <div>
               <button
                 type="submit"
-                className="relative py-2 px-8 mt-4 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200 flex items-center justify-center"
+                className="relative py-2 px-8 mt-4 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200"
               >
                 {isLoading ? (
                   <RotatingLines

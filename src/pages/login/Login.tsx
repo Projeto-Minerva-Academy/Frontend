@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -92,7 +92,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="relative py-2 px-8 mt-4 bg-blue-400 text-white rounded-full hover:bg-blue-500 transition duration-200"
+            className="content-center py-2 px-8 mt-4 bg-blue-400 text-white rounded-full hover:bg-blue-500 transition duration-200"
           >
             {isLoading ? (
               <RotatingLines
