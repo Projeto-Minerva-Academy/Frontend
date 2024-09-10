@@ -5,16 +5,20 @@ import { Link, useNavigate } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { Grid } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListarCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
   let navigate = useNavigate();
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
   async function buscarCategorias() {
+    setIsLoading(true)
     try {
       await listar("/categorias", setCategorias, {
         headers: { Authorization: token },
@@ -24,11 +28,13 @@ function ListarCategoria() {
         handleLogout();
       }
     }
+    setIsLoading(false)
+
   }
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      ToastAlerta("Você precisa estar logado", "error");
       navigate("/");
     }
   }, [token]);
@@ -41,7 +47,7 @@ function ListarCategoria() {
     <>
       <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24 my-20">
         <div className="flex justify-center mb-6">
-          {categorias.length === 0 && (
+          {isLoading && (
             <Grid
               visible={true}
               height="150"
@@ -56,11 +62,11 @@ function ListarCategoria() {
         </div>
         <div className="flex justify-end mb-6">
           <Link to="/cadastrarCategoria">
-            {categorias.length !== 0 && (
-              <button className="py-2 px-6 bg-blue-400 text-white rounded-lg border border-blue-500 hover:bg-blue-500 transition duration-300">
+            
+              <button className="py-2 px-6 bg-sky-500 text-white rounded-lg border border-blue-500 hover:bg-blue-500 transition duration-300">
                 Nova Categoria
               </button>
-            )}
+            
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

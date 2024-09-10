@@ -14,7 +14,13 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import FormProduto from "./components/produtos/formProduto/FormProduto";
 import DeleteProduto from "./components/produtos/deleteProduto/DeleteProduto";
+<<<<<<< HEAD
 import ListaProdutos from "./components/produtos/listaProduto/ListaProduto";
+=======
+import Projeto from "./pages/projeto/Projeto";
+import Cursos from "./pages/cursos/Cursos";
+
+>>>>>>> 6d16251e359d93e8ddbebdf728966d0ade656a95
 
 function App() {
   return (
@@ -27,7 +33,9 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Home" element={<Home />} />
+                <Route path="/Projeto" element={<Projeto />} />
                 <Route path="/Sobre" element={<Sobre />} />
+                <Route path="/cursos" element={<Cursos />} />
                 <Route path="/Contato" element={<Contato />} />
                 <Route path="/Cadastrar" element={<Cadastro />} />
                 <Route path="/login" element={<Login />} />
@@ -39,7 +47,7 @@ function App() {
                 <Route path="/cadastrarProduto" element={<FormProduto />} />
                 <Route path="/editarProduto/:id" element={<FormProduto />} />
                 <Route path="/deleteProduto/:id" element={<DeleteProduto />} />
-
+                <Route path="/Contato" element={<Contato />} />
               </Routes>
             </main>
           </div>

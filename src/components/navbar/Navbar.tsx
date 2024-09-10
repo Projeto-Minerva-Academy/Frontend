@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 
   function logout() {
     handleLogout();
-    ToastAlerta("O usuário foi desconectado com sucesso!", "info");
+    ToastAlerta("O usuário foi desconectado com sucesso!", "sucesso");
     navigate("/");
   }
 
@@ -58,48 +58,32 @@ const Navbar: React.FC = () => {
           {isMenuOpen ? <HiX /> : <HiMenu />}
         </button>
         <nav
-          className={`md:flex md:items-center md:space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-transparent transition-transform ${isMenuOpen ? "transform translate-y-0" : "transform -translate-y-full"} md:translate-y-0`}
+          className={`md:flex md:items-center md:space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-white transition-transform ${isMenuOpen ? 'transform translate-y-0' : 'transform -translate-y-full'} md:translate-y-0`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-            <li>
-              <Link to="/cursos" className="text-gray-800 hover:text-gray-600">
-                Cursos
-              </Link>
-            </li>
-            <li>
-              <Link to="/Sobre" className="text-gray-800 hover:text-gray-600">
-                O Projeto
-              </Link>
-            </li>
-            <li>
-              <Link to="/Contato" className="text-gray-800 hover:text-gray-600">
-                Contato
-              </Link>
-            </li>
-            <li>
-              <Link to="/Produtos" className="text-gray-800 hover:text-gray-600">
-                Produtos
-              </Link>
-            </li>
-            {(<li>
-              <Link
-                to="/Categorias"
-                className="text-gray-800 hover:text-gray-600"
-              >
-                Categoria
-              </Link>
-            </li>)}
+            <li><Link to="/"className="text-blue-500 hover:main__title--gradient text-1xl">Home</Link></li>
+            <li><Link to="/cursos"className="text-blue-500 hover:main__title--gradient text-1xl">Cursos</Link></li>
+            <li><Link to="/Projeto" className="text-blue-500 hover:main__title--gradient text-1xl">O Projeto</Link></li>
+            <li><Link to="/Sobre" className="text-blue-500 hover:main__title--gradient text-1xl">Quem Faz</Link></li>
+            <li><Link to="/Contato" className="text-blue-500 hover:main__title--gradient text-1xl">Contato</Link></li>
+            
+            {usuario.token !== "" && (
+              <li> 
+                <Link to="/Categorias" className="text-blue-500 hover:main__title--gradient text-1xl">Categorias</Link>
+              </li>
+              )}
+
             {usuario.token !== "" && (
               <li>
-                <Link
-                  to=""
+                <button
                   onClick={logout}
-                  className="text-gray-800 hover:text-gray-600"
+                  className="text-blue-500 hover:main__title--gradient text-1xl"
                 >
                   Sair
-                </Link>
+                </button>
               </li>
             )}
+
           </ul>
           {usuario.token === "" && (
             <div className="relative flex items-center -space-x-10 mt-4 md:mt-0">
@@ -108,6 +92,7 @@ const Navbar: React.FC = () => {
                   <AuthButtonAbove />
                 </Link>
               </div>
+
               <div className="relative -ml-44 z-0">
                 <Link to="/Cadastrar">
                   <AuthButtonBelow />
@@ -115,6 +100,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
           )}
+          
         </nav>
       </div>
     </header>

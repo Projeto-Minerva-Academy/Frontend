@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
-import { DNA } from "react-loader-spinner";
+import { DNA, Grid } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import CardProduto from "../cardProduto/CardProduto";
 import Produto from "../../../models/Produto";
@@ -10,10 +10,14 @@ import { listar, deletar } from "../../../services/Service";
 function ListaProdutos() {
     const navigate = useNavigate();
     const [produtos, setProdutos] = useState<Produto[]>([]);
+
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
     async function buscarProdutos() {
+        setIsLoading(true)
         try {
             await listar('/produtos', setProdutos, {
                 headers: {
@@ -25,6 +29,7 @@ function ListaProdutos() {
                 handleLogout();
             }
         }
+        setIsLoading(false)
     }
 
     const handleDelete = async (id: number) => {
@@ -56,16 +61,20 @@ function ListaProdutos() {
 
     return (
         <>
-            {produtos.length === 0 && (
-                <DNA
-                    visible={true}
-                    height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
-                />
-            )}
+        <div className="flex justify-center mb-6">
+          {isLoading && (
+            <Grid
+              visible={true}
+              height="150"
+              width="150"
+              color="#2795B7"
+              ariaLabel="grid-loading"
+              radius="12.5"
+              wrapperStyle={{}}
+              wrapperClass="grid-wrapper"
+            />
+          )}
+        </div>
             <div className='container mx-auto px-4 sm:px-6 md:px-12 lg:px-24 my-20'>
                 <div className="flex justify-end mb-6">
                     <button
