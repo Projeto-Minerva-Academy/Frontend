@@ -31,11 +31,11 @@ function Contato() {
 
     }
 
-    useEffect(() => {
-        if (isSucess) {
-            retornar()
-        }
-    }, [isSucess])
+    // useEffect(() => {
+    //     if (isSucess) {
+    //         retornar()
+    //     }
+    // }, [isSucess])
 
     function retornar() {
         navigate('/Cadastrar')
