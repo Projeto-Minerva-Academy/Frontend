@@ -68,29 +68,26 @@ export default function Cadastro() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            'url(https://images.unsplash.com/photo-1507738978512-35798112892c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', // Caminho da imagem
+            "url(https://images.unsplash.com/photo-1507738978512-35798112892c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)", // Caminho da imagem
           backgroundAttachment: "fixed",
         }}
       ></div>
 
-
-
       <div className="relative z-10 max-x-md flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mt-24">
-
         {/* Seção do Formulário */}
         <div className="relative z-10 bg-white/30 backdrop-blur-xl mt-2 rounded-3xl p-8 shadow-lg w-full max-w-md">
-
-        <div className="text-center">
-          <img
-            alt="Logo Minerva"
-            src="./logo.png"
-            className="mx-auto h-16 w-auto mb-4"
-          />
-          <h2 className="text-2xl font-bold mb-2 text-gray-800">Crie sua conta</h2>
-        </div>
+          <div className="text-center">
+            <img
+              alt="Logo Minerva"
+              src="./logo.png"
+              className="mx-auto h-16 w-auto mb-4"
+            />
+            <h2 className="text-2xl font-bold mb-2 text-gray-800">
+              Crie sua conta
+            </h2>
+          </div>
 
           <form className="space-y-6" onSubmit={cadastrarNovoUsuario}>
-
             <div>
               <label
                 htmlFor="nome"
@@ -184,10 +181,10 @@ export default function Cadastro() {
               />
             </div>
 
-            <div>
+            <div className="text-center">
               <button
                 type="submit"
-                className="relative ml-32 py-2 px-8 mt-2 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200"
+                className="relative py-2 px-8 mt-2 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200 mx-auto"
               >
                 {isLoading ? (
                   <RotatingLines
@@ -210,8 +207,7 @@ export default function Cadastro() {
         </div>
       </div>
 
-      <footer className="relative z-10 mt-19 py-4 text-center text-gray-500">
-      </footer>
+      <footer className="relative z-10 mt-19 py-4 text-center text-gray-500"></footer>
     </div>
   );
 }
