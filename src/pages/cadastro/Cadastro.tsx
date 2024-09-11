@@ -112,6 +112,24 @@ export default function Cadastro() {
 
             <div>
               <label
+                htmlFor="usuario"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Email
+              </label>
+              <input
+                id="usuario"
+                name="usuario"
+                type="text"
+                required
+                autoComplete="usuario"
+                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
+                onChange={atualizarEstado}
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="senha"
                 className="block text-sm font-medium text-gray-600"
               >
@@ -150,24 +168,6 @@ export default function Cadastro() {
 
             <div>
               <label
-                htmlFor="usuario"
-                className="block text-sm font-medium text-gray-600"
-              >
-                Email
-              </label>
-              <input
-                id="usuario"
-                name="usuario"
-                type="text"
-                required
-                autoComplete="usuario"
-                className="block w-full mt-1 p-2 border rounded-full border-gray-300 bg-white/50 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-400"
-                onChange={atualizarEstado}
-              />
-            </div>
-
-            <div>
-              <label
                 htmlFor="foto"
                 className="block text-sm font-medium  text-gray-600"
               >
@@ -187,7 +187,7 @@ export default function Cadastro() {
             <div>
               <button
                 type="submit"
-                className="relative py-2 px-8 mt-2 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200"
+                className="relative ml-32 py-2 px-8 mt-2 bg-blue-400 text-white rounded-full hover:bg-blue-600 transition duration-200"
               >
                 {isLoading ? (
                   <RotatingLines

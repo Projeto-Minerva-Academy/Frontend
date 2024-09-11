@@ -53,7 +53,7 @@ function App() {
           <Navbar />
           <Footer />
         </BrowserRouter>
-      </AuthProvider>
+        </AuthProvider> 
     </>
   );
 }

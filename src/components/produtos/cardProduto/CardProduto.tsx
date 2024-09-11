@@ -42,7 +42,7 @@ function CardProduto({ produto, onDelete }: CardProdutosProps) {
                         <span className="font-medium">Preço:</span>
                         <span>R${produto.preco}</span>
                     </div>
-                    <div className="bg-gray-100 border border-gray-300 p-2 rounded-lg shadow-sm flex items-center justify-between">
+                    <div className="absolute bottom-1 bg-gray-100 border border-gray-300 p-2 rounded-lg shadow-sm flex items-center justify-between">
                         <span className="font-medium">Duração:</span>
                         <span>{produto.duracao}h</span>
                     </div>

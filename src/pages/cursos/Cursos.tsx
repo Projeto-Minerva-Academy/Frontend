@@ -27,8 +27,8 @@ const Cursos = () => {
   }, [token, handleLogout]);
 
   return (
-    <div>
-      <Navbar />
+    <>
+    <Navbar />
       <div className="bg-white">
         <div className="container px-6 py-8 mx-auto">
           <h1 className="mt-20 main__title--gradient text-5xl font-size-12 font-bold">Cursos</h1>
@@ -36,22 +36,17 @@ const Cursos = () => {
             Confira todos os cursos que oferecemos por um valor que você pode pagar!
           </p>
           <div className="lg:flex lg:-mx-2 mt-6">
-            <div className="w-80 mr-1.5 lg:px-2 lg:space-y-4 p-4 py-6 px-6 rounded-lg border bg-gray-50 md:p-8">
-
-            </div>
-
             <div className="items-center justify-between content-around grid grid-cols-3 gap-8 mt-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
               {produtos.map((produto) => (
                 <CourseCard
-                  key={produto.id} 
-                  produto={produto}  
-                />
+                  key={produto.id}
+                  produto={produto} />
               ))}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

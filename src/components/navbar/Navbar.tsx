@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   }
 
   const isHomePage = location.pathname === "/";
-  const isAdmin = usuario.usuario === "adm@minerva.com.br"; // Verifica se o usuário é admin
+  const isAdmin = usuario.usuario === "adm@minerva.com.br"; 
 
   return (
     <header
@@ -66,7 +66,6 @@ const Navbar: React.FC = () => {
             <li><Link to="/Projeto" className="text-white hover:main__title--gradient text-1xl">A Minerva</Link></li>
             <li><Link to="/Sobre" className="text-white hover:main__title--gradient text-1xl">Quem Faz</Link></li>
             <li><Link to="/Contato" className="text-white hover:main__title--gradient text-1xl">Contato</Link></li>
-
             {usuario.token !== "" && (
               <>
                 {isAdmin && ( 
