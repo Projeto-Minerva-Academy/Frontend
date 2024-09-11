@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, Database, Code, Browsers, ChartLine, User} from "phosphor-react" // Exemplo de ícones da Phosphor Icons
+import { Link } from 'react-router-dom';
 
 
 type Card = {
@@ -74,12 +75,10 @@ const MarketingSection: React.FC = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <a
-            href="/cursos"
-            className="inline-block rounded-full bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 px-12 py-3 text-sm font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring focus:ring-blue-400"
-          >
+          <Link  to="/cursos"
+            className="inline-block rounded-full bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 px-12 py-3 text-sm font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring focus:ring-blue-400">
             Comece Agora
-          </a>
+          </Link>
         </div>
       </div>
     </section>
