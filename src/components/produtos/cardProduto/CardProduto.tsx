@@ -4,7 +4,7 @@ import Produto from '../../../models/Produto';
 interface CardProdutosProps {
     produto: Produto;
     token: string;      
-    onDelete: (id: number) => void;  // Adiciona a função onDelete
+    onDelete: (id: number) => void; 
 }
 
 function CardProduto({ produto, onDelete }: CardProdutosProps) {
@@ -53,7 +53,7 @@ function CardProduto({ produto, onDelete }: CardProdutosProps) {
                         Editar
                     </Link>
                     <button
-                        onClick={() => onDelete(produto.id)}  // Chama a função onDelete
+                        onClick={() => onDelete(produto.id)}  
                         className='flex-1 text-white bg-red-400 hover:bg-red-700 py-2 rounded-md text-center'>
                         Deletar
                     </button>

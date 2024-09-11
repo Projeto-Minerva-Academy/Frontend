@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
             <span className="bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
               start
             </span>{" "}
-            na sua carreira
+            que sua carreira precisa
           </h2>
           <p className="text-gray-300">
             Profissionais qualificados e certificados reconhecidos ao final de cada curso, por um valor que cabe no seu bolso!

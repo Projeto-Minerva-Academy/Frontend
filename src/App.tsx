@@ -17,6 +17,7 @@ import FormProduto from "./components/produtos/formProduto/FormProduto";
 import DeleteProduto from "./components/produtos/deleteProduto/DeleteProduto";
 import Projeto from "./pages/projeto/Projeto";
 import Cursos from "./pages/cursos/Cursos";
+import CourseDetail from "./pages/cursos/CourseDetail";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/Projeto" element={<Projeto />} />
                 <Route path="/Sobre" element={<Sobre />} />
                 <Route path="/cursos" element={<Cursos />} />
+                <Route path="/curso/:id" element={<CourseDetail />} /> 
                 <Route path="/Contato" element={<Contato />} />
                 <Route path="/Cadastrar" element={<Cadastro />} />
                 <Route path="/login" element={<Login />} />
