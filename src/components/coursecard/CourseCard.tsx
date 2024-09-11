@@ -12,7 +12,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ produto }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const toggleExpand = () => setIsExpanded(!isExpanded);
   return (
-    <div className={`w-auto ml-2 mr-20 bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden transition-transform transform hover:scale-105 flex flex-col ${isExpanded ? 'h-auto' : 'h-full'}`}>
+    <div className={`w-80 ml-2 mr-20 bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden transition-transform transform hover:scale-105 flex flex-col ${isExpanded ? 'h-auto' : 'h-full'}`}>
       <Link to={`/curso/${produto.id}`} className="block">
         <img
           src={produto.foto}
@@ -37,14 +37,6 @@ const CourseCard: React.FC<CourseCardProps> = ({ produto }) => {
           {produto.descricao}
 
         </p>
-        <div>
-        <button
-            onClick={toggleExpand}
-            className="absolute bottom-2 left-2 text-blue-500 hover:underline"
-          >
-            {isExpanded ? 'Ver menos' : 'Ver mais'}
-          </button>
-        </div>
           <div className="mt-2">
             <div className="bg-gray-100 border border-gray-200 p-2 rounded-full shadow-sm flex items-center justify-between">
               <span className="font-medium">Duração</span>
