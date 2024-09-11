@@ -13,7 +13,7 @@ function CardProduto({ produto, onDelete }: CardProdutosProps) {
             
             <div className="relative w-full h-[200px]">
                 <img
-                    src={produto.usuario?.foto} 
+                    src={produto.foto} 
                     alt="Imagem do Produto"
                     className="w-full h-full object-cover"
                 />
@@ -35,16 +35,14 @@ function CardProduto({ produto, onDelete }: CardProdutosProps) {
                 </div>
                 <div id="atributos" className="text-xs mb-5 text-gray-700 flex flex-col gap-2">
                     <div className="bg-gray-100 border border-gray-300 p-2 rounded-lg shadow-sm flex items-center justify-between">
-                        <span className="font-medium">Descrição:</span>
                         <span>{produto.descricao}</span>
                     </div>
                     <div className="bg-gray-100 border border-gray-300 p-2 rounded-lg shadow-sm flex items-center justify-between">
                         <span className="font-medium">Preço:</span>
                         <span>R${produto.preco}</span>
                     </div>
-                    <div className="absolute bottom-1 bg-gray-100 border border-gray-300 p-2 rounded-lg shadow-sm flex items-center justify-between">
-                        <span className="font-medium">Duração:</span>
-                        <span>{produto.duracao}h</span>
+                    <div className="bg-gray-100 border border-gray-300 p-2 rounded-lg shadow-sm flex items-center justify-between">
+                        <span className="font-medium">Duração:{produto.duracao}h</span>
                     </div>
                 </div>
                 <div className="flex gap-2">
