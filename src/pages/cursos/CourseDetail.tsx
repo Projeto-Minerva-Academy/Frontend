@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Produto from '../../models/Produto';
 import { listar } from '../../services/Service';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -47,9 +47,11 @@ const CourseDetail: React.FC = () => {
                 <span>{produto.duracao} horas</span>
               </div>
             </div>
+            <Link to="/contato" className="text-blue-600 hover:underline">
             <button className="py-3 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 text-lg font-semibold shadow-lg hover:shadow-xl">
               Inscreva-se agora
             </button>
+            </Link>
           </div>
         </div>
       </div>
