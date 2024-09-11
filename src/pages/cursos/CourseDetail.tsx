@@ -1,16 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Produto from '../../models/Produto';
 import { listar } from '../../services/Service';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const CourseDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>(); 
   const [produto, setProduto] = useState<Produto | null>(null);
 
+  const { usuario } = useContext(AuthContext);
+  const token = usuario.token;
+
   useEffect(() => {
     async function fetchProduto() {
       try {
-        await listar(`/produtos/${id}`, setProduto, {}); 
+        await listar(`/produtos/${id}`, setProduto, {headers: {Authorization: token}}); 
       } catch (error) {
         console.error('Erro ao buscar o curso', error);
       }
