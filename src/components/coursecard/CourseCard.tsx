@@ -6,9 +6,13 @@ interface CourseCardProps {
   produto: Produto;
 }
 
+
+
 const CourseCard: React.FC<CourseCardProps> = ({ produto }) => {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+  const toggleExpand = () => setIsExpanded(!isExpanded);
   return (
-    <div className="w-60 ml-2 mr-20 bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden transition-transform transform hover:scale-105 flex flex-col h-auto">
+    <div className={`w-64 ml-2 mr-20 bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden transition-transform transform hover:scale-105 flex flex-col ${isExpanded ? 'h-auto' : 'h-full'}`}>
       <Link to={`/curso/${produto.id}`} className="block">
         <img
           src={produto.foto}
@@ -27,8 +31,11 @@ const CourseCard: React.FC<CourseCardProps> = ({ produto }) => {
               {produto.nome}
             </span>
           </h2>
-          <p className="text-gray-700 flex-grow overflow-hidden text-sm">
+          <p className={`px-2 py-4 text-md font-medium ${isExpanded ? '' : 'line-clamp-3'} overflow-hidden`}
+            style={{ maxHeight: isExpanded ? 'none' : '6rem' }}>
+
           {produto.descricao}
+
         </p>
           <div className="mt-2">
             <div className="bg-gray-100 border border-gray-200 p-2 rounded-full shadow-sm flex items-center justify-between">
@@ -39,9 +46,9 @@ const CourseCard: React.FC<CourseCardProps> = ({ produto }) => {
             <span className="font-medium">Valor</span>
             <span>R${produto.preco}</span>
           </div>
-          <button className="w-full mt-2 bg-gradient-to-r from-blue-400 to-green-400 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
+          {/* <button className="w-full mt-2 bg-gradient-to-r from-blue-400 to-green-400 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
             Adicionar ao Carrinho
-          </button>
+          </button> */}
         </div>
         </div>
       </Link>

@@ -2,7 +2,7 @@ import Categoria from "./Categoria";
 import Usuario from "./Usuario";
 
 export default interface Produto {
-  valor: ReactNode;
+  valor: number;
   id: number;
   nome: string;
   descricao: string;
