@@ -45,7 +45,7 @@ const Cursos = () => {
       <Navbar />
       <div className="container px-6 py-8 mx-auto">
         <h1 className="mt-20 text-5xl font-bold bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
-         Todos os Cursos disponíveis na nossa plataforma!
+         Todos os Cursos disponíveis na nossa plataforma
         </h1>
 
         <p className="mt-2 mb-20 text-base text-gray-700 md:text-lg">
@@ -65,7 +65,7 @@ const Cursos = () => {
           </main>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
