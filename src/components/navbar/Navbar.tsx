@@ -59,15 +59,15 @@ const Navbar: React.FC = () => {
           } md:translate-y-0`}
         >
           {isMenuOpen && (
-            <div className="flex justify-between items-center p-4">
+            <div className="flex justify-between items-center pb-3 p-4">
               <h2 className="text-xl font-bold">Menu</h2>
               <button onClick={toggleMenu} className="text-3xl">
                 <HiX />
               </button>
             </div>
           )}
-          
-          <ul className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 px-6 py-4">
+
+          <ul className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 px-6 py-4 pb-4"> {/* Ajuste de padding inferior aqui */}
             <li>
               <Link to="/" className="text-blue-500 hover:main__title--gradient text-1xl">
                 Home
@@ -111,7 +111,7 @@ const Navbar: React.FC = () => {
             )}
           </ul>
           {usuario.token === "" && (
-            <div className="relative flex items-center -space-x-10 mt-6 md:mt-0 px-6">
+            <div className="relative flex items-center -space-x-10 mt-6 md:mt-0 px-6 pb-5"> {/* Adicionei padding inferior aqui também */}
               <div className="relative z-20">
                 <Link to="/login">
                   <AuthButtonAbove />
