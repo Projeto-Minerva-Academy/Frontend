@@ -1,45 +1,81 @@
-import React from "react";
-import Button from "../button/Button";
+import React, { useState } from "react";
 
 const HeroSection: React.FC = () => {
+  const [state, setState] = useState<boolean>(false);
+
+  // Substitua o caminho javascript:void(0) pelo seu caminho real
+  const navigation = [
+    { title: "Partners", path: "javascript:void(0)" },
+    { title: "Customers", path: "javascript:void(0)" },
+    { title: "Team", path: "javascript:void(0)" },
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-800 overflow-hidden">
-      <div className="absolute inset-0 -z-0 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#5ae99a] to-[#681eca] opacity-30" style={{ clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" }} />
-      </div>
-
-      <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/fundooo.png')" }} />
-
-      <div className="z-10 max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden px-6 pt-14 lg:px-8">
-        <div className="flex flex-col items-center space-y-5 px-4 sm:max-w-g md:px-0 lg:max-w-md">
-          <h2 className="text-4xl text-white font-extrabold md:text-5xl text-center">
-            Na Minerva você dá o{" "}
-            <span className="bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
-              start
-            </span>{" "}
-            na sua carreira
+    <section className="py-28 bg-white">
+      <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex px-4">
+        <div className="flex-none space-y-5 sm:max-w-lg lg:max-w-xl md:w-3/5" style={{ width: '40%', height: 'auto' }}>
+          <h1 className="text-2xl text-blue-400 font-medium md:text-3xl">
+            Venha já para a Minerva!
+          </h1>
+          <h2 className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent md:text-5xl">
+            Garanta seu futuro com cursos que cabem no seu bolso.
           </h2>
-          <p className="text-gray-300">
-            Profissionais qualificados e certificados reconhecidos ao final de cada curso, por um valor que cabe no seu bolso!
+          <p className="text-gray-600">
+            Profissionais qualificados e certificados reconhecidos ao final de cada curso.
           </p>
           <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
-  <Button 
-    to="/projeto" 
-    className="text-white bg-gray-600 hover:bg-gray-400 text-center text-sm" 
-  >
-    Conheça nosso projeto
-  </Button>
-  <Button
-    to="/cadastrar"
-    className="relative py-1 px-7 text-white border border-gray-600 bg-transparent rounded-full overflow-hidden group text-sm" 
-  >
-    <span className="absolute inset-0 bg-gradient-to-r from-gray-400 via-blue-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-    <span className="relative z-10">Garanta já seu acesso</span>
-  </Button>
-</div>
+            <a
+              href="/Cadastrar"
+              className="flex items-center justify-center gap-x-2 py-2 px-4 text-white bg-blue-400 hover:text-black font-medium duration-150 active:bg-gray-100 border border-blue-400 rounded-full md:inline-flex"
+            >
+              Garanta já o seu acesso!
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div className="flex-none mt-14 md:mt-0 md:max-w-xl w-full sm:w-1/2 md:w-auto">
+          <img
+            src="https://wordpress-cms-ead-prod-assets.quero.space/uploads/2023/10/1.jpg"
+            className="md:rounded-tl-[108px] w-2/5 md:w-full" // Imagem reduzida em 60% no modo mobile
+            alt="Startup"
+          />
         </div>
       </div>
-    </div>
+      <div className="mt-14 px-4">
+  <div className="flex-none space-y-5 sm:max-w-lg lg:max-w-xl md:w-3/5 mx-auto" style={{ width: '40%', height: 'auto' }}>
+    
+    {/* Texto visível apenas no desktop */}
+    <p className="hidden md:block text-center text-base text-gray-700 font-semibold lg:text-lg">
+      Venha já para a melhor plataforma de ensino a distância.
+    </p>
+  </div>
+
+  <div className="flex justify-center items-center flex-wrap gap-x-12 gap-y-6 mt-6"></div>
+</div>
+
+<div className="mt-0 px-4">
+<div className="flex-none space-y-5 sm:max-w-lg mt-0 lg:max-w-xl md:w-3/5" style={{ width: '40%', height: 'auto' }}>
+
+  <p className=" block md:hidden text-center text-sm text-gray-700 font-semibold mx-auto md:w-2/3 lg:w-full md:text-base lg:text-lg">
+    Venha já para a melhor plataforma de ensino a distância.
+  </p>
+</div>
+
+  <div className="flex justify-center items-center flex-wrap gap-x-12 gap-y-6 mt-6"></div>
+</div>
+
+    </section>
   );
 };
 
