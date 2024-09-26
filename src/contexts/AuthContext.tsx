@@ -4,6 +4,8 @@ import { login } from "../services/Service";
 import { ToastAlerta } from "../utils/ToastAlerta";
 
 interface AuthContextProps {
+  isMenuOpen: boolean; // Estado que indica se o menu está aberto
+  toggleMenu: () => void; // Função para alternar o estado do menu
   usuario: UsuarioLogin;
   handleLogout(): void;
   handleLogin(usuario: UsuarioLogin): Promise<void>;
@@ -17,6 +19,9 @@ interface AuthProviderProps {
 export const AuthContext = createContext({} as AuthContextProps);
 
 export function AuthProvider({ children }: AuthProviderProps) {
+
+  const [isMenuOpen, setMenuOpen] = useState(false); // Estado para controlar o menu
+
   const [usuario, setUsuario] = useState<UsuarioLogin>({
     id: 0,
     nome: "",
@@ -27,6 +32,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+
+   // Função para alternar o estado do menu
+   const toggleMenu = () => {
+    setMenuOpen(prev => !prev); 
+};
 
   useEffect(() => {
     // Recupera o token armazenado
@@ -66,7 +76,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   return (
     <AuthContext.Provider
-      value={{ usuario, handleLogin, handleLogout, isLoading }}
+      value={{ usuario, handleLogin, handleLogout, isLoading, isMenuOpen, toggleMenu }}
     >
       {children}
     </AuthContext.Provider>
