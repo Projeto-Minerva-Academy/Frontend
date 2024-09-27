@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import AuthButtonAbove from "../buttons/authButtons/AuthButtonAbove";
 import AuthButtonBelow from "../buttons/authButtons/AuthButtonBelow";
@@ -8,110 +8,122 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 const Navbar: React.FC = () => {
   const { isMenuOpen, toggleMenu } = useContext(AuthContext);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const { usuario, handleLogout } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   function logout() {
     handleLogout();
-    ToastAlerta("O usuário foi desconectado com sucesso!", "sucesso");
+    ToastAlerta("O usuário foi desconectado com sucesso!", "info");
     navigate("/");
   }
 
-  return (
-    <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-      <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-        <div className="flex items-center space-x-4 flex-grow">
-          <Link to="/" className="text-2xl font-bold text-gray-800 hover:text-gray-600 flex items-center">
-            <img src="/logo.png" alt="Logo" className="h-10" />
-          </Link>
-          <div className="relative flex-grow max-w-xs">
-            <input
-              type="search"
-              name="search"
-              placeholder="O que você quer aprender?"
-              className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none w-full"
-            />
-            <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
-              <svg
-                className="h-4 w-4 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 56.966 56.966"
-                width="512px"
-                height="512px"
-              >
-                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-              </svg>
-            </button>
-          </div>
-        </div>
+  const isHomePage = location.pathname === "/";
+  const isAdmin = usuario.usuario === "adm@minerva.com.br";
 
-        {/* Botão Hambúrguer */}
-        <button
-          onClick={toggleMenu}
-          className="text-3xl p-2 focus:outline-none md:hidden"
+  return (
+    <header
+      className={`fixed top-0  w-full z-50 transition-colors duration-300 ${
+        isScrolled || !isHomePage
+          ? "bg-gray-700 text-white shadow-md"
+          : "bg-transparent text-white"
+      }`}
+    >
+      <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+        <Link
+          to="/"
+          className="text-2xl font-bold text-gray-800 hover:text-gray-600 flex items-center"
         >
+          <img src="/logob.png" alt="Logo" className="h-10" />
+        </Link>
+
+        {/* Botão Toggle Menu */}
+        <button onClick={toggleMenu} className="md:hidden text-white text-2xl">
           {isMenuOpen ? <HiX /> : <HiMenu />}
         </button>
 
+        {/* Menu de Navegação */}
         <nav
-          className={`md:flex md:items-center md:space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-white transition-transform duration-300 ease-in-out ${
+          className={`md:flex md:items-center md:space-x-6 fixed md:relative top-0 left-0 w-full md:w-auto bg-gray-700 md:bg-transparent transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "transform translate-y-0" : "transform -translate-y-full"
-          } md:translate-y-0`}
+          } md:transform-none md:translate-y-0 z-50 md:z-auto md:relative md:pl-60`}
         >
-          {isMenuOpen && (
-            <div className="flex justify-between items-center pb-3 p-4">
-              <h2 className="text-xl font-bold">Menu</h2>
-              <button onClick={toggleMenu} className="text-3xl">
-                <HiX />
-              </button>
-            </div>
-          )}
+          {/* Ícone de Fechar no Mobile */}
+          <div className="flex justify-between items-center pb-3 p-4 md:hidden">
+          <h2 className="text-xl font-bold">Menu</h2>
+            <button onClick={toggleMenu} className="text-white text-2xl">
+              <HiX />
+            </button>
+          </div>
 
-          <ul className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 px-6 py-4 pb-4"> {/* Ajuste de padding inferior aqui */}
-            <li>
-              <Link to="/" className="text-blue-500 hover:main__title--gradient text-1xl">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/cursos" className="text-blue-500 hover:main__title--gradient text-1xl">
+          <ul className="flex flex-col relative md:right-60 md:flex-row md:space-x-4 space-y-4 md:space-y-0 justify-center items-center px-4 py-6 md:p-0 ml-0">
+          <li>
+              <Link to="/cursos" className="text-white hover:main__title--gradient text-1xl">
                 Cursos
               </Link>
             </li>
             <li>
-              <Link to="/Projeto" className="text-blue-500 hover:main__title--gradient text-1xl">
-                O Projeto
+              <Link to="/Projeto" className="text-white hover:main__title--gradient text-1xl">
+                A Minerva
               </Link>
             </li>
             <li>
-              <Link to="/Sobre" className="text-blue-500 hover:main__title--gradient text-1xl">
+              <Link to="/Sobre" className="text-white hover:main__title--gradient text-1xl">
                 Quem Faz
               </Link>
             </li>
             <li>
-              <Link to="/Contato" className="text-blue-500 hover:main__title--gradient text-1xl">
+              <Link to="/Contato" className="text-white hover:main__title--gradient text-1xl">
                 Contato
               </Link>
             </li>
 
+            {/* Verificação de usuário autenticado e administrador */}
             {usuario.token !== "" && (
-              <li>
-                <Link to="/Categorias" className="text-blue-500 hover:main__title--gradient text-1xl">
-                  Categorias
-                </Link>
-              </li>
-            )}
-
-            {usuario.token !== "" && (
-              <li>
-                <button onClick={logout} className="text-blue-500 hover:main__title--gradient text-1xl">
-                  Sair
-                </button>
-              </li>
+              <>
+                {isAdmin && (
+                  <>
+                    <li>
+                      <Link to="/Categorias" className="text-blue-500 hover:main__title--gradient text-1xl">
+                        Categorias
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/produtos" className="text-blue-500 hover:main__title--gradient text-1xl">
+                        Produtos
+                      </Link>
+                    </li>
+                  </>
+                )}
+                <li>
+                  <button
+                    onClick={logout}
+                    className="text-blue-500 hover:main__title--gradient text-1xl"
+                  >
+                    Sair
+                  </button>
+                </li>
+              </>
             )}
           </ul>
+
+          {/* Botões de Login e Cadastro */}
           {usuario.token === "" && (
-            <div className="relative flex items-center -space-x-10 mt-6 md:mt-0 px-6 pb-5"> {/* Adicionei padding inferior aqui também */}
+            <div className="relative justify-center md:mb-0 mb-5 flex items-center -space-x-10 mt-3 md:mt-0">
               <div className="relative z-20">
                 <Link to="/login">
                   <AuthButtonAbove />
