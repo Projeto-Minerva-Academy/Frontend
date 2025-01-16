@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# Projeto Minerva Academy - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O Projeto Minerva é um MVP (Minimum Viable Product) e uma iniciativa dedicada a proporcionar **educação de qualidade para todos**. Nosso objetivo é promover a inclusão e a equidade no aprendizado, oferecendo cursos e recursos que atendem a uma ampla gama de necessidades e interesses. Acreditamos que a educação é a chave para transformar vidas e, por isso, nos empenhamos em criar um ambiente acessível e enriquecedor para todos os nossos alunos.
 
-Currently, two official plugins are available:
+## Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este repositório contém o código-fonte do frontend do Projeto Minerva Academy, desenvolvido utilizando tecnologias modernas como **React**, **TypeScript**, **Tailwind CSS** e **Vite**. O objetivo do projeto é entregar uma interface intuitiva, responsiva e agradável para os usuários acessarem nossos recursos educacionais.
 
-## Expanding the ESLint configuration
+O site já está **em produção**, tornando o aprendizado mais acessível para diversos públicos. Este repositório é destinado ao uso interno e não está aberto para contribuições externas.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tecnologias Utilizadas
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: Biblioteca para criação de interfaces dinâmicas e interativas.
+- **TypeScript**: Adiciona tipagem estática ao código, aumentando a segurança e a qualidade do desenvolvimento.
+- **Vite**: Ferramenta de build rápida para projetos modernos, com foco em performance.
+- **Tailwind CSS**: Framework de CSS utilitário que facilita a criação de estilos consistentes e responsivos.
+- **ESLint**: Mantém a qualidade do código com análises estáticas.
+  
+## Funcionalidades
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Autenticação de Usuário**: Tela de login e cadastro intuitivas.
+- **Página Inicial (Landingpage)**: Apresentação clara dos valores e objetivos do Projeto Minerva.
+- **Acesso aos Cursos**: Navegação facilitada para explorar e se inscrever nos cursos disponíveis.
+- **Responsividade**: Interface adaptada para diferentes dispositivos, oferecendo uma ótima experiência para todos.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Estrutura do Repositório
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- `src/`: Código-fonte principal.
+  - `components/`: Componentes reutilizáveis, como botões, cabeçalhos, e formulários.
+  - `pages/`: Páginas principais da aplicação.
+  - `assets/`: Imagens, ícones e outros recursos estáticos.
+- `public/`: Arquivos públicos acessíveis diretamente.
+- Configurações principais:
+  - `tailwind.config.js`: Arquivo de configuração do Tailwind CSS.
+  - `vite.config.ts`: Configuração do Vite para otimização de performance.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Prints do Projeto
+
+Para uma visualização mais completa do Projeto Minerva, confira as imagens abaixo:
+
+### Página Inicial (Landingpage)
+<img src="https://imgur.com/giRSUcz" alt="Hero Section" width="500" />
+<img src="https://imgur.com/p1pTF8d" alt="Body" width="500" />
+<img src="https://imgur.com/bTuZndF" alt="Depoimento" width="500" />
+
+### Tela de Login e Cadastro
+<img src="https://imgur.com/2BczKWf" alt="Tela de login" width="500" />
+<img src="https://imgur.com/XPOLHAH" alt="Tela de cadastro" width="500" />
+
+### Navegação pelo Sobre
+<img src="https://imgur.com/NHQqMY5" alt="Tela Sobre" width="500" />
+
+### Alguns Cursos
+<img src="https://imgur.com/81eYAfO" alt="Tela Sobre" width="500" />
+
+## Acesso ao Projeto
+
+O site está em produção e pode ser acessado em:  
+[**Projeto Minerva Academy**](https://minervaacademy.netlify.app/)
+
+## Licença
+
+Este projeto é de uso fechado e não aceita contribuições externas. Todos os direitos estão reservados ao time responsável pelo desenvolvimento do Projeto Minerva Academy.
+
+---
+
+✨ **A educação é a chave para transformar vidas. Junte-se a nós nessa jornada!** ✨
