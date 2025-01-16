@@ -39,19 +39,19 @@ O site já está **em produção**, tornando o aprendizado mais acessível para 
 Para uma visualização mais completa do Projeto Minerva, confira as imagens abaixo:
 
 ### Página Inicial (Landingpage)
-<img src="https://imgur.com/giRSUcz" alt="Hero Section" width="500" />
-<img src="https://imgur.com/p1pTF8d" alt="Body" width="500" />
-<img src="https://imgur.com/bTuZndF" alt="Depoimento" width="500" />
+<img src="https://i.imgur.com/giRSUcz.jpg" alt="Hero Section" width="500" />
+<img src="https://i.imgur.com/p1pTF8d.jpg" alt="Body" width="500" />
+<img src="https://i.imgur.com/bTuZndF.jpg" alt="Depoimento" width="500" />
 
 ### Tela de Login e Cadastro
-<img src="https://imgur.com/2BczKWf" alt="Tela de login" width="500" />
-<img src="https://imgur.com/XPOLHAH" alt="Tela de cadastro" width="500" />
+<img src="https://i.imgur.com/2BczKWf.jpg" alt="Tela de login" width="500" />
+<img src="https://i.imgur.com/XPOLHAH.jpg" alt="Tela de cadastro" width="500" />
 
 ### Navegação pelo Sobre
-<img src="https://imgur.com/NHQqMY5" alt="Tela Sobre" width="500" />
+<img src="https://i.imgur.com/NHQqMY5.jpg" alt="Tela Sobre" width="500" />
 
 ### Alguns Cursos
-<img src="https://imgur.com/81eYAfO" alt="Tela Sobre" width="500" />
+<img src="https://i.imgur.com/81eYAfO.jpg" alt="Cursos" width="500" />
 
 ## Acesso ao Projeto
 
